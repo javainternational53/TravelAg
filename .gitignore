@@ -5,3 +5,4 @@ bin/
 .settings/org.eclipse.jdt.core.prefs
 .settings/org.eclipse.m2e.core.prefs
 .idea/
+src/main/resources/persistence.xml
