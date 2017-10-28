@@ -11,8 +11,8 @@
 
       <properties>
          <property name="javax.persistence.jdbc.url" value="idemajdurljon"/>
-         <property name="javax.persistence.jdbc.user" value="idemajdnevjon"/>
-         <property name="javax.persistence.jdbc.password" value="idemajdjelszojon"/>
+         <property name="javax.persistence.jdbc.user" value="asd"/>
+         <property name="javax.persistence.jdbc.password" value="fgh"/>
          <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
          <property name="eclipselink.logging.level" value="FINE"/>
          <property name="eclipselink.ddl-generation" value="create-tables"/>
