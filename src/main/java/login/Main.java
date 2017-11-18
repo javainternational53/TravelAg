@@ -16,19 +16,22 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
     	System.out.println("duplaasd");
     	//RS
+    	
     	//loader.setLocation(Main.class.getResourceAsStream("sample.fxml"));
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/T1.fxml"));
 
         primaryStage.setScene(new Scene(root, 500, 775));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
+    	System.out.println("triplaasd");
     	User user=new User();
         user.setUsername("asd");
         user.setId(0);
         
         PersistenceManager.createUser(user);
+        System.out.println("Quadraasd");
         user=null;
         
         user=PersistenceManager.getUserByName("asd");
