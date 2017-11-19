@@ -25,7 +25,7 @@ public class PersistenceManager {
 		User user=null;
 		EntityManager em=getEntityManager();
 		
-		Query query = em.createQuery("SELECT u FROM User u WHERE name LIKE :uName");
+		Query query = em.createQuery("SELECT u FROM User u WHERE username LIKE :uName");
 		query.setParameter("uName", name);
 		user=(User)query.getSingleResult();
 		
@@ -35,9 +35,11 @@ public class PersistenceManager {
 	
 	public static void createUser(User user) {
 		EntityManager em=getEntityManager();
-		
+		System.out.print("creating user");
+		em.getTransaction().begin();
 		em.persist(user);
-		
+		em.getTransaction().commit();
+		System.out.print("creating done");
 		em.close();
 	}
 	

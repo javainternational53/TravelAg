@@ -7,14 +7,14 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-		<mainClass>Main</mainClass>
+		<mainClass>login.Main</mainClass>
 	</properties>
 	<name>Travel Agency</name>
 	<description>Travel Agency App</description>
 	<build>
 		<resources>
 			<resource>
-				<directory>resource</directory>
+				<directory>resources</directory>
 			</resource>
 		</resources>
 		<plugins>
@@ -69,19 +69,31 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>javax.persistence</groupId>
-			<artifactId>persistence-api</artifactId>
-			<version>1.0.2</version>
-		</dependency>
-		<dependency>
 			<groupId>com.jfoenix</groupId>
 			<artifactId>jfoenix</artifactId>
 			<version>1.4.0</version>
 		</dependency>
+		<!-- Ezt kellett lecserélni!!!!
+		<dependency>
+  			<groupId>javax.persistence</groupId>
+  			<artifactId>persistence-api</artifactId>
+  			<version>1.0.2</version>
+		</dependency> Erre alatta-->
+		
+		<dependency>
+        <groupId>org.hibernate.javax.persistence</groupId>
+        <artifactId>hibernate-jpa-2.1-api</artifactId>
+        <version>1.0.0.Final</version>
+    </dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.3.6.Final</version>
 		</dependency>
+		<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.27</version>
+        </dependency>
 	</dependencies>
 </project>

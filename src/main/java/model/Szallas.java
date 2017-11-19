@@ -5,8 +5,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table
+
+
 @Entity
+@Table(name = "Szallas")
 public class Szallas {
 	
 	@Id
