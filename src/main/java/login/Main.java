@@ -39,6 +39,6 @@ public class Main extends Application {
         System.out.println(user);
     	
     	launch(args);
-         
+       
     }
 }
