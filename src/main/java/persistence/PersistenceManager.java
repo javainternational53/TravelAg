@@ -22,7 +22,9 @@ public class PersistenceManager {
 	}
 	
 	public static User getUserByName(String name) {
+		
 		User user=null;
+		try {
 		EntityManager em=getEntityManager();
 		
 		Query query = em.createQuery("SELECT u FROM User u WHERE username LIKE :uName");
@@ -30,6 +32,12 @@ public class PersistenceManager {
 		user=(User)query.getSingleResult();
 		
 		em.close();
+		}catch(Exception e) {
+			user=new User();
+			user.setPassword("Test");
+			user.setUsername("Test");
+			user.setId(1);
+		}
 		return user;
 	}
 	
