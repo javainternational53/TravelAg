@@ -3,6 +3,8 @@ package persistence;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import model.User;
 import model.Szallas;
 import model.Quality;
@@ -34,7 +36,7 @@ public class PersistenceManager {
 		em.close();
 		}catch(Exception e) {
 			user=new User();
-			user.setPassword("Test");
+			user.setPassword(BCrypt.hashpw("Test", BCrypt.gensalt()));
 			user.setUsername("Test");
 			user.setId(1);
 		}
@@ -45,6 +47,7 @@ public class PersistenceManager {
 		EntityManager em=getEntityManager();
 		System.out.print("creating user");
 		em.getTransaction().begin();
+		user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
 		em.persist(user);
 		em.getTransaction().commit();
 		System.out.print("creating done");
