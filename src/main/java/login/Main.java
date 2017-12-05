@@ -12,17 +12,17 @@ import persistence.PersistenceManager;
 
 public class Main extends Application {
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-    	//System.out.println("duplaasd");
-    	//RS
-    	
-    	//loader.setLocation(Main.class.getResourceAsStream("sample.fxml"));
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/T1.fxml"));
-
-        primaryStage.setScene(new Scene(root, 500, 775));
-        primaryStage.show();
-    }
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/login.fxml"));
+			Scene scene = new Scene(root,700,450);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 
     public static void main(String[] args) {
     	
