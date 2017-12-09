@@ -12,6 +12,12 @@ import persistence.PersistenceManager;
 
 public class Main extends Application {
 
+	public static void startInServerMode() {
+		
+		
+		
+	}
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -26,22 +32,10 @@ public class Main extends Application {
 
     public static void main(String[] args) {
     	
-    	
-    	
-    	
-    	User user=new User();
-        user.setUsername("asd");
-        user.setId(0);
-        /*
-        PersistenceManager.createUser(user);
-        */
-        user=null;
-        
-        user=PersistenceManager.getUserByName("asd");
-        
-        System.out.println(user);
-    	
-    	launch(args);
+    	if(args[0].equals("-server"))
+    		startInServerMode();
+    	else
+    		launch(args);
        
     }
 }
