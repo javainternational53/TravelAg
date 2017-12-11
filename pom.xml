@@ -28,6 +28,26 @@
 				</configuration>
 			</plugin>
 			<plugin>
+       				 <artifactId>maven-plugin-plugin</artifactId>
+       				 <version>3.2</version>
+      				  <configuration>
+       				   <goalPrefix>hibernate-schema</goalPrefix>
+        				  <skip>true</skip>
+        				</configuration>
+      					  <executions>
+        				  <execution>
+           				 <id>mojo-descriptor</id>
+           			 <phase>process-classes</phase>
+           			 <goals>
+           			   <goal>descriptor</goal>
+           			 </goals>
+          			  <configuration>
+           			   <skip>false</skip>
+           			 </configuration>
+         			 </execution>
+        			</executions>
+     			 </plugin>
+			<plugin>
        					 <groupId>org.apache.maven.plugins</groupId>
        			 		<artifactId>maven-jar-plugin</artifactId>
       			 		 <configuration>
