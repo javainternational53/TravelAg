@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -9,21 +8,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.RegisterController">
+
+<AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141">
    <children>
-      <Pane prefHeight="500.0" prefWidth="124.0" style="-fx-background-color: #3196DE;" />
-      <TextField fx:id="fxFirstName" layoutX="146.0" layoutY="92.0" promptText="FirstName" />
-      <TextField fx:id="fxLastName" layoutX="146.0" layoutY="151.0" promptText="LastName" />
-      <PasswordField fx:id="fxPassword" layoutX="146.0" layoutY="278.0" promptText="Password" />
-      <TextField fx:id="fxEmail" layoutX="146.0" layoutY="339.0" promptText="Email" />
-      <TextField fx:id="fxUserName" layoutX="146.0" layoutY="219.0" promptText="UserName" />
-      <Button fx:id="fxResetAll" layoutX="207.0" layoutY="430.0" mnemonicParsing="false" onAction="#ResetAll" style="-fx-background-color: #3196DE;" text="ResetAll" />
-      <Button layoutX="427.0" layoutY="430.0" mnemonicParsing="false" style="-fx-background-color: #3196DE;" text="SignUp" />
-      <DatePicker layoutX="353.0" layoutY="92.0" promptText="Birthday" />
-      <Label layoutX="260.0" layoutY="14.0" prefHeight="70.0" prefWidth="187.0" style="-fx-text-fill: #3196DE;" text="Register">
+      <Pane prefHeight="500.0" prefWidth="96.0" style="-fx-background-color: #3196DE;" />
+      <Label layoutX="114.0" layoutY="31.0" text="Register" textFill="#3196de">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
+      <TextField layoutX="107.0" layoutY="141.0" promptText="FirstName" />
+      <TextField layoutX="107.0" layoutY="207.0" promptText="LastName" />
+      <TextField layoutX="107.0" layoutY="272.0" promptText="UserName" />
+      <PasswordField layoutX="107.0" layoutY="334.0" promptText="Password" />
+      <TextField layoutX="107.0" layoutY="395.0" promptText="Email" />
+      <Button layoutX="135.0" layoutY="447.0" mnemonicParsing="false" text="Clear" textFill="#3196de" />
+      <Button layoutX="255.0" layoutY="447.0" mnemonicParsing="false" text="SignUp" textFill="#3196de" />
    </children>
 </AnchorPane>
