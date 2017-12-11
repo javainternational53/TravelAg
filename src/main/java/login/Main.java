@@ -18,18 +18,70 @@ public class Main extends Application {
 		
 	}
 	
-	@Override
-	public void start(Stage primaryStage) {
-		try {
-			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/login.fxml"));
-			Scene scene = new Scene(root,700,450);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+	private Stage primaryStage;
+	private BorderPane rootLayout;
+	private ObservableList<Travel> travelData = FXCollections.observableArrayList();
+	
+	public MainApp() {
+		travelData.add(new Travel("Budapest", 4000.0, 50000.0, 50));
+		travelData.add(new Travel("Debrecen", 3000.0, 30000.0, 30));
+		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, 25));
+		travelData.add(new Travel("Szeged", 3000.0, 20000.0, 34));
+		travelData.add(new Travel("Győr", 3000.0, 30000.0, 23));
+		travelData.add(new Travel("Eger", 2500.0, 25000.0, 19));
+	}	
+
+	public ObservableList<Travel> getTravelData() {
+        return travelData;
+    }
+	
+	 public void setTravelData(ObservableList<Travel> travelData) {
+		this.travelData = travelData;
 	}
 
+	@Override
+	    public void start(Stage primaryStage) {
+	        this.primaryStage = primaryStage;
+	        this.primaryStage.setTitle("Travel");
+
+	        menu();
+
+	        travel();
+	    }
+
+	    public void menu() {
+	        try {
+	            // Load root layout from fxml file.
+	            FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(MainApp.class.getResource("view/menu.fxml"));
+	            rootLayout = (BorderPane) loader.load();
+
+	            Scene scene = new Scene(rootLayout);
+	            primaryStage.setScene(scene);
+	            primaryStage.show();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+		
+	    public void travel() {
+	        try {
+	            FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(MainApp.class.getResource("view/travel.fxml"));
+	            AnchorPane personOverview = (AnchorPane) loader.load();
+
+	            rootLayout.setCenter(personOverview);
+	         // Give the controller access to the main app.
+	            TravelController controller = loader.getController();
+	            controller.setMainApp(this);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    public Stage getPrimaryStage() {
+	        return primaryStage;
+	    }
     public static void main(String[] args) {
     	
     	if(args[0].equals("-server"))
