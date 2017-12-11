@@ -1,7 +1,33 @@
-package login;
+package travel.view;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.print.DocFlavor.STRING;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import travel.MainApp;
+import travel.model.Travel;
 
 public class TravelController {
-
 	@FXML
 	List<Travel> travelList;
 	@FXML
@@ -30,7 +56,6 @@ public class TravelController {
 	private ObservableList<Travel> travelsearchObservList = null;
 
 	private MainApp mainApp;
-
 
 	public TravelController() {
 	}
@@ -82,13 +107,48 @@ public class TravelController {
 					primaryStage.setScene(scene);
 					primaryStage.setTitle("TravelSearch");
 					primaryStage.show();
-				
+					
+					
+					//TravelSearchController controller;
+			           // controller.setMainApp(this);
 				}
 			}
 			System.out.println();
 		});
-		
+	
+	
+	/**/
+	
 	}
 
-	
+	public void setMainApp(MainApp mainApp) {
+		this.mainApp = mainApp;
+		
+		
+		// Add observable list data to the table
+		travelTable.setItems(mainApp.getTravelData());
+	}
+
+	public void Login(ActionEvent event) throws IOException {
+		Stage primaryStage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travel/view/login.fxml"));
+		Scene scene = new Scene(root, 300, 200);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("Login");
+		primaryStage.show();
+	}
+
+	public void SignUp(ActionEvent event) throws IOException {
+		Stage primaryStage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travel/view/register.fxml"));
+		Scene scene = new Scene(root, 400, 500);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("Register");
+		primaryStage.show();
+	}
+
+	public void exit() {
+		System.exit(0);
+	}
 }
+
