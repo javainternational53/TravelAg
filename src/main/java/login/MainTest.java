@@ -1,3 +1,4 @@
+/*
 package travel;
 
 import java.io.IOException;
@@ -90,12 +91,9 @@ public class MainApp extends Application {
 	        
 	    }
 
-            */
+            
 
-	    /**
-	     * Returns the main stage.
-	     * @return
-	     */
+	 
 	    public Stage getPrimaryStage() {
 	        return primaryStage;
 	    }
@@ -104,4 +102,7 @@ public class MainApp extends Application {
 	        launch(args);
 	    }
 }
+*/
+
+
 
