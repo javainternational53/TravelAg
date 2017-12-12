@@ -5,8 +5,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-import model.NetworkMessage;
-import model.User;
+import travelling.model.NetworkMessage;
+import travelling.model.User;
 
 public class ClientServingThread implements Runnable {
 

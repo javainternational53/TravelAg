@@ -1,4 +1,4 @@
-package model;
+package travelling.model;
 
 public class NetworkMessage {
 	

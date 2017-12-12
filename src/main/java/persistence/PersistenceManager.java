@@ -5,12 +5,13 @@ import javax.persistence.EntityManagerFactory;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import model.User;
-import model.Szallas;
-import model.Quality;
+import travelling.model.Quality;
+import travelling.model.Szallas;
+import travelling.model.User;
 
 import java.util.LinkedList;
 import java.util.List;
+
 
 import javax.persistence.*;
 

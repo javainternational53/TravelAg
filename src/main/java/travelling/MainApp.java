@@ -1,16 +1,24 @@
-package login;
+package travelling;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import model.User;
 import persistence.PersistenceManager;
 
-public class Main extends Application {
+import travelling.model.Travel;
+import travelling.model.User;
+import travelling.view.TravelController;
+
+public class MainApp extends Application {
 
 	public static void startInServerMode() {
 		
@@ -27,7 +35,7 @@ public class Main extends Application {
 		travelData.add(new Travel("Debrecen", 3000.0, 30000.0, 30));
 		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, 25));
 		travelData.add(new Travel("Szeged", 3000.0, 20000.0, 34));
-		travelData.add(new Travel("Gy≈ër", 3000.0, 30000.0, 23));
+		travelData.add(new Travel("Gyır", 3000.0, 30000.0, 23));
 		travelData.add(new Travel("Eger", 2500.0, 25000.0, 19));
 	}	
 
@@ -83,11 +91,12 @@ public class Main extends Application {
 	        return primaryStage;
 	    }
     public static void main(String[] args) {
-    	
+    	/*
     	if(args[0].equals("-server"))
     		startInServerMode();
     	else
     		launch(args);
-       
+       */
+    	launch(args);
     }
 }

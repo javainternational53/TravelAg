@@ -7,7 +7,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-		<mainClass>login.Main</mainClass>
+		<mainClass>travelling.mainapp</mainClass>
 	</properties>
 	<name>Travel Agency</name>
 	<description>Travel Agency App</description>
@@ -27,33 +27,14 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<plugin>
-       				 <artifactId>maven-plugin-plugin</artifactId>
-       				 <version>3.2</version>
-      				  <configuration>
-       				   <goalPrefix>hibernate-schema</goalPrefix>
-        				  <skip>true</skip>
-        				</configuration>
-      					  <executions>
-        				  <execution>
-           				 <id>mojo-descriptor</id>
-           			 <phase>process-classes</phase>
-           			 <goals>
-           			   <goal>descriptor</goal>
-           			 </goals>
-          			  <configuration>
-           			   <skip>false</skip>
-           			 </configuration>
-         			 </execution>
-        			</executions>
-     			 </plugin>
+			
 			<plugin>
        					 <groupId>org.apache.maven.plugins</groupId>
        			 		<artifactId>maven-jar-plugin</artifactId>
       			 		 <configuration>
             				<archive>
                 			<manifest>
-                    			<mainClass>login.Main</mainClass>
+                    			<mainClass>travelling.mainapp</mainClass>
                 			</manifest>
             				</archive>
         				</configuration>
@@ -78,7 +59,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>login.Main</mainClass>
+					<mainClass>travelling.mainapp</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -93,7 +74,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>login.Main</mainClass>
+					<mainClass>travelling.mainapp</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
