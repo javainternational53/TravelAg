@@ -1,4 +1,4 @@
-package travel.view;
+package travelling.view;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -24,8 +24,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import travel.MainApp;
-import travel.model.Travel;
+import travelling.MainApp;
+import travelling.model.Travel;
+
 
 public class TravelController {
 	@FXML
@@ -68,7 +69,7 @@ public class TravelController {
 		maxPriceColumn.setCellValueFactory(cellData -> cellData.getValue().maxPriceProperty().asObject());
 		hotelsNumberColumn.setCellValueFactory(cellData -> cellData.getValue().hotelsNumberProperty().asObject());
 
-		// Keresõ visszaállítása
+		// KeresÅ‘ visszaÃ¡llÃ­tÃ¡sa
 		this.searchButton.setOnAction((event) -> {
 			double minPrice = 1;
 			double maxPrice = 10000000;
@@ -93,35 +94,26 @@ public class TravelController {
 				}
 			for (Travel travel : mainApp.getTravelData()) {
 				if (minPrice <= travel.getMinPrice() && maxPrice >= travel.getMAxPrice()
-						&& city.equals(travel.getCity())) {
+						&& (city.equals(travel.getCity()) || city.length() == 0)) {
 					System.out.println(travel.getCity());
-					/*
 					Stage primaryStage = new Stage();
 					Parent root = null;
 					try {
-						root = FXMLLoader.load(getClass().getClassLoader().getResource("travel/view/travelSearch.fxml"));
+						root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/travelSearch.fxml"));
 					} catch (IOException e) {
+						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					Scene scene = new Scene(root,1000,500);
 					primaryStage.setScene(scene);
-					primaryStage.setTitle("TravelSearch");
+					primaryStage.setTitle("Travel");
 					primaryStage.show();
 					((Node) (event.getSource())).getScene().getWindow().hide();
-					*/
+					
 				}
 
 			}
 		});
-		/*
-		 * //Keresés az utak között this.searchButton.setOnAction((event) -> {
-		 * 
-		 * this.cityComboBox.setValue(""); this.minPriceInput.setText("1");
-		 * this.maxPriceInput.setText("100000");
-		 * System.out.println(mainApp.getTravelData().size());
-		 * //this.travelTable.getItems().remove(0, this.travelTable.getItems().size());
-		 * //this.travelTable.getItems().addAll(travelList); });
-		 */
 	}
 
 	public void setMainApp(MainApp mainApp) {
@@ -132,7 +124,7 @@ public class TravelController {
 
 	public void Login(ActionEvent event) throws IOException {
 		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travel/view/login.fxml"));
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/login.fxml"));
 		Scene scene = new Scene(root, 300, 200);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Login");
@@ -141,7 +133,7 @@ public class TravelController {
 
 	public void SignUp(ActionEvent event) throws IOException {
 		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travel/view/register.fxml"));
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/register.fxml"));
 		Scene scene = new Scene(root, 400, 500);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Register");
