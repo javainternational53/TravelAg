@@ -23,6 +23,11 @@ public class User {
 	StringProperty password;
 
 	
+	
+	public User() {
+		super();
+	}
+
 	public User(long id, String username, String password) {
 		super();
 		this.id = id;
