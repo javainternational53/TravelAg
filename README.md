@@ -6,7 +6,9 @@ Summary:This is a Travel Agency Application powered by Java. Moreover this is ou
 
 Board:
 
-Versions: TravelAG 2.1 - Release1 
+Versions: TravelAG 2.1 -
+
+
 -----------------------------------------------------------------------------------------------
 
 
