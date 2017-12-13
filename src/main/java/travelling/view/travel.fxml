@@ -12,11 +12,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.TravelController">
    <children>
-      <SplitPane dividerPositions="0.6593186372745491" layoutX="351.0" layoutY="178.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.591182364729459" layoutX="388.0" layoutY="207.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="travelTable" layoutX="46.0" layoutY="135.0" prefHeight="380.0" prefWidth="575.0">
+                  <TableView fx:id="travelTable" layoutX="31.0" layoutY="155.0" prefHeight="371.0" prefWidth="524.0">
                     <columns>
                       <TableColumn fx:id="cityColumn" prefWidth="75.0" text="City" />
                       <TableColumn fx:id="minPriceColumn" prefWidth="75.0" text="MinPrice" />
@@ -27,7 +27,7 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <Label layoutX="173.0" layoutY="42.0" text="Secect Trip">
+                  <Label layoutX="146.0" layoutY="54.0" text="Select Trip" textFill="#3196de">
                      <font>
                         <Font size="64.0" />
                      </font>
@@ -36,27 +36,27 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label layoutX="83.0" layoutY="44.0" text="Search">
+                  <ButtonBar layoutX="190.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" onAction="#Login" text="Login" textFill="#3196de" />
+                        <Button mnemonicParsing="false" onAction="#SignUp" text="Sign Up" textFill="#3196de" />
+                    </buttons>
+                  </ButtonBar>
+                  <Label layoutX="96.0" layoutY="51.0" prefHeight="76.0" prefWidth="189.0" text="Search" textFill="#3196de">
                      <font>
                         <Font size="64.0" />
                      </font>
                   </Label>
-                  <Label layoutX="25.0" layoutY="209.0" text="City" />
-                  <Label layoutX="25.0" layoutY="278.0" text="MinPrice" />
-                  <Label layoutX="25.0" layoutY="356.0" text="MacPrice" />
-                  <TextField fx:id="minPriceInput" alignment="CENTER" layoutX="137.0" layoutY="273.0" promptText="1" />
-                  <TextField fx:id="maxPriceInput" alignment="CENTER" layoutX="137.0" layoutY="351.0" promptText="100000" />
-                  <Button fx:id="deleteButton" layoutX="131.0" layoutY="496.0" mnemonicParsing="false" text="Clear" />
-                  <Button fx:id="searchButton" layoutX="231.0" layoutY="496.0" mnemonicParsing="false" text="Search" />
-                  <ButtonBar layoutX="131.0" layoutY="14.0" prefHeight="40.0" prefWidth="198.0">
-                    <buttons>
-                      <Button mnemonicParsing="false" onAction="#Login" text="Login" />
-                        <Button mnemonicParsing="false" onAction="#SignUp" text="SignUp" />
-                    </buttons>
-                  </ButtonBar>
-                  <TextField fx:id="cityInput" alignment="CENTER" layoutX="138.0" layoutY="204.0" promptText="City" />
-               </children>
-            </AnchorPane>
+                  <Label layoutX="32.0" layoutY="174.0" text="City" textFill="#3196de" />
+                  <Label layoutX="28.0" layoutY="248.0" text="MinPrice" textFill="#3196de" />
+                  <Label layoutX="28.0" layoutY="326.0" text="MaxPrice" textFill="#3196de" />
+                  <TextField fx:id="cityInput" alignment="CENTER" layoutX="153.0" layoutY="169.0" promptText="City" />
+                  <TextField fx:id="minPriceInput" alignment="CENTER" layoutX="153.0" layoutY="243.0" promptText="1" />
+                  <TextField fx:id="maxPriceInput" alignment="CENTER" layoutX="153.0" layoutY="321.0" promptText="1000000" />
+                  <Button fx:id="searchButton" layoutX="285.0" layoutY="482.0" mnemonicParsing="false" text="Search" textFill="#3196de" />
+                  <Button fx:id="clearButton" layoutX="170.0" layoutY="482.0" mnemonicParsing="false" text="Clear" textFill="#3196de" />
+                  <Label layoutX="8.0" layoutY="24.0" text="Signed Out" textFill="#3196de" />
+               </children></AnchorPane>
         </items>
       </SplitPane>
    </children>
