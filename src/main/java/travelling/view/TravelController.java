@@ -2,17 +2,20 @@ package travelling.view;
 
 import java.awt.Label;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -166,10 +169,21 @@ public class TravelController {
 			}
 			System.out.println();
 		});
+		
 		this.clearButton.setOnAction((event) -> {
 			cityInput.setText("");
 			minPriceInput.setText("");
 			maxPriceInput.setText("");
+		});
+		travelTable.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+					/*Ide jon majd a cuccos*/
+					System.out.println("Proba");
+					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+				}
+			}
 		});
 	}
 
