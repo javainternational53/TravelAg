@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 
 @Entity
 @Table(name = "User")
@@ -15,9 +18,17 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	
-	String username;
+	StringProperty username;
 	
-	String password;
+	StringProperty password;
+
+	
+	public User(long id, String username, String password) {
+		super();
+		this.id = id;
+		this.username = new SimpleStringProperty(username);
+		this.password = new SimpleStringProperty(password);
+	}
 
 	public long getId() {
 		return id;
@@ -28,19 +39,25 @@ public class User {
 	}
 
 	public String getUsername() {
-		return username;
+		return username.get();
 	}
 
 	public void setUsername(String username) {
-		this.username = username;
+		this.username.set(username);
+	}
+	public StringProperty userNameProperty() {
+		return username;
 	}
 
 	public String getPassword() {
-		return password;
+		return password.get();
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.password.set(password);;
+	}
+	public StringProperty passwordProperty() {
+		return password;
 	}
 
 	@Override
