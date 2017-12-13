@@ -1,13 +1,11 @@
 Project Name: TravelAg
 
-This is our RFT Project.
-
-
-Summary:
+Summary:This is a Travel Agency Application powered by Java. Moreover this is our RFT Project . 
 
 
 Board:
 
+Versions: TravelAG 2.1 - Release1 
 
 
 
