@@ -52,7 +52,7 @@ public class TravelController {
 	private Button searchButton = new Button();
 	@FXML
 	private Button clearButton = new Button();
-	
+
 	@FXML
 	private MainApp mainApp;
 	private Stage primaryStage;
@@ -97,11 +97,9 @@ public class TravelController {
 		maxPriceColumn.setCellValueFactory(cellData -> cellData.getValue().maxPriceProperty().asObject());
 		hotelsNumberColumn.setCellValueFactory(cellData -> cellData.getValue().hotelsNumberProperty().asObject());
 		/*
-		if(LoginController.loginout == false)
-			System.out.println("asd");
-		else
-			System.out.println("uio");
-		*/
+		 * if(LoginController.loginout == false) System.out.println("asd"); else
+		 * System.out.println("uio");
+		 */
 		this.searchButton.setOnAction((event) -> {
 			double minPrice = 1;
 			double maxPrice = 10000000;
@@ -154,22 +152,21 @@ public class TravelController {
 					TravelSearchController controller = loader.getController();
 					controller.setTravelController(this);
 					dialogStage.show();
-					
+
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}
-			else {
+			} else {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Information Dialog");
-				alert.setHeaderText("Nincs találat");
-				alert.setContentText("Próbálkozz újra");
+				alert.setHeaderText("Nincs talĂˇlat");
+				alert.setContentText("PrĂłbĂˇlkozz Ăşjra");
 
 				alert.showAndWait();
 			}
 			System.out.println();
 		});
-		
+
 		this.clearButton.setOnAction((event) -> {
 			cityInput.setText("");
 			minPriceInput.setText("");
@@ -179,9 +176,35 @@ public class TravelController {
 			@Override
 			public void handle(MouseEvent event) {
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
-					/*Ide jon majd a cuccos*/
-					System.out.println("Proba");
 					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+					if (selectedTravelItem.getCity().equals("Budapest")) {
+						try {
+							// Load the fxml file and create a new stage for the popup.
+							FXMLLoader loader = new FXMLLoader();
+							loader.setLocation(MainApp.class.getResource("view/Budapest.fxml"));
+							AnchorPane page = (AnchorPane) loader.load();
+							Stage dialogStage = new Stage();
+							dialogStage.setTitle("City");
+							dialogStage.initModality(Modality.WINDOW_MODAL);
+							dialogStage.initOwner(primaryStage);
+							Scene scene = new Scene(page);
+							dialogStage.setScene(scene);
+
+							// Set the persons into the controller.
+							// controller.setTravelController(travelSearchData);
+							/*
+							 * TravelSearchController controller = loader.getController();
+							 * controller.setTravelController(this);
+							 */
+							dialogStage.show();
+
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+					/* Ide jon majd a cuccos */
+
+					System.out.println(selectedTravelItem.getCity());
 				}
 			}
 		});
