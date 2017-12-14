@@ -54,6 +54,7 @@ public class Server implements Runnable {
 	
 	@Override
 	public void run() {
+		System.out.println("Server started");
 		while(running) {
 			try {
 				Socket socket=serverSocket.accept();

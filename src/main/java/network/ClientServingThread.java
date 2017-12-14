@@ -35,7 +35,7 @@ public class ClientServingThread implements Runnable {
 		while(running) {
 			try {
 				NetworkMessage message = (NetworkMessage) socketInput.readObject();
-				
+				System.out.println("Thread running");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

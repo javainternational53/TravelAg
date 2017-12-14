@@ -22,7 +22,8 @@ public class MenuController {
 	private BorderPane rootLayout;
 	public ObservableList<User> userListData = FXCollections.observableArrayList();
 	private LoginController login;
-
+	
+	
 	public ObservableList<User> getUserListData() {
 		return userListData;
 	}

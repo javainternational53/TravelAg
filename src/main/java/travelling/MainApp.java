@@ -12,18 +12,23 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import network.Client;
+import network.Server;
 import persistence.PersistenceManager;
-
+import travelling.model.NetworkMessage;
 import travelling.model.Travel;
 import travelling.model.User;
+import travelling.view.MenuController;
 import travelling.view.TravelController;
 
 public class MainApp extends Application {
 
 	public static void startInServerMode() {
 		
-		
-		
+		Server server=new Server();
+		server.run();
+		while(true);
+			
 	}
 	
 	private Stage primaryStage;
@@ -35,7 +40,7 @@ public class MainApp extends Application {
 		travelData.add(new Travel("Debrecen", 3000.0, 30000.0, 30));
 		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, 25));
 		travelData.add(new Travel("Szeged", 3000.0, 20000.0, 34));
-		travelData.add(new Travel("Gyõr", 3000.0, 30000.0, 23));
+		travelData.add(new Travel("Gyï¿½r", 3000.0, 30000.0, 23));
 		travelData.add(new Travel("Eger", 2500.0, 25000.0, 19));
 	}	
 
@@ -90,13 +95,19 @@ public class MainApp extends Application {
 	    public Stage getPrimaryStage() {
 	        return primaryStage;
 	    }
+	    
     public static void main(String[] args) {
-    	/*
-    	if(args[0].equals("-server"))
+    	
+    	if(args.length>0 && args[0].equals("-server")) {
     		startInServerMode();
-    	else
+    		
+    	}
+    	else {
     		launch(args);
-       */
-    	launch(args);
+    		
+    		
+    	}
     }
+    
+    
 }
