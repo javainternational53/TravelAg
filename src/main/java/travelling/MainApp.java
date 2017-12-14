@@ -21,9 +21,7 @@ import travelling.view.TravelController;
 public class MainApp extends Application {
 
 	public static void startInServerMode() {
-		
-		
-		
+	
 	}
 	
 	private Stage primaryStage;
@@ -31,12 +29,12 @@ public class MainApp extends Application {
 	private ObservableList<Travel> travelData = FXCollections.observableArrayList();
 	
 	public MainApp() {
-		travelData.add(new Travel("Budapest", 4000.0, 50000.0, 50));
-		travelData.add(new Travel("Debrecen", 3000.0, 30000.0, 30));
-		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, 25));
-		travelData.add(new Travel("Szeged", 3000.0, 20000.0, 34));
-		travelData.add(new Travel("Gyõr", 3000.0, 30000.0, 23));
-		travelData.add(new Travel("Eger", 2500.0, 25000.0, 19));
+		travelData.add(new Travel("Budapest", 4000.0, 50000.0, "yes"));
+		travelData.add(new Travel("Debrecen", 3000.0, 30000.0, "yes"));
+		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, "yes"));
+		travelData.add(new Travel("Szeged", 3000.0, 20000.0, "yes"));
+		travelData.add(new Travel("Gyõr", 3000.0, 30000.0, "yes"));
+		travelData.add(new Travel("Eger", 2500.0, 25000.0, "yes"));
 	}	
 
 	public ObservableList<Travel> getTravelData() {
