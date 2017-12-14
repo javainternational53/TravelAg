@@ -175,13 +175,14 @@ public class TravelController {
 		travelTable.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
+				
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
 					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
 					if (selectedTravelItem.getCity().equals("Budapest")) {
 						try {
 							// Load the fxml file and create a new stage for the popup.
 							FXMLLoader loader = new FXMLLoader();
-							loader.setLocation(MainApp.class.getResource("view/Budapest.fxml"));
+							loader.setLocation(MainApp.class.getResource("view/budapest.fxml"));
 							AnchorPane page = (AnchorPane) loader.load();
 							Stage dialogStage = new Stage();
 							dialogStage.setTitle("City");
@@ -206,6 +207,43 @@ public class TravelController {
 
 					System.out.println(selectedTravelItem.getCity());
 				}
+				
+				// másik város 
+				
+				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+					if (selectedTravelItem.getCity().equals("Debrecen")) {
+						try {
+							// Load the fxml file and create a new stage for the popup.
+							FXMLLoader loader = new FXMLLoader();
+							loader.setLocation(MainApp.class.getResource("view/debrecen.fxml"));
+							AnchorPane page = (AnchorPane) loader.load();
+							Stage dialogStage = new Stage();
+							dialogStage.setTitle("City");
+							dialogStage.initModality(Modality.WINDOW_MODAL);
+							dialogStage.initOwner(primaryStage);
+							Scene scene = new Scene(page);
+							dialogStage.setScene(scene);
+
+							// Set the persons into the controller.
+							// controller.setTravelController(travelSearchData);
+							/*
+							 * TravelSearchController controller = loader.getController();
+							 * controller.setTravelController(this);
+							 */
+							dialogStage.show();
+
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+					/* Ide jon majd a cuccos */
+
+					System.out.println(selectedTravelItem.getCity());
+				}
+				
+				// *** 
+				
 			}
 		});
 	}
