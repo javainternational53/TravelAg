@@ -27,14 +27,29 @@ public class MainApp extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 	private ObservableList<Travel> travelData = FXCollections.observableArrayList();
-	
+	//test
 	public MainApp() {
-		travelData.add(new Travel("Budapest", 4000.0, 50000.0, "yes"));
-		travelData.add(new Travel("Debrecen", 3000.0, 30000.0, "yes"));
+		travelData.add(new Travel("Budapest", 100.0, 50000.0, "yes"));
+		travelData.add(new Travel("Debrecen", 100.0, 30000.0, "yes"));
 		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, "yes"));
 		travelData.add(new Travel("Szeged", 3000.0, 20000.0, "yes"));
 		travelData.add(new Travel("Gyõr", 3000.0, 30000.0, "yes"));
+		travelData.add(new Travel("Nyiregyhaza", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Bekescsaba", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Szeged", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Szolnok", 2500.0, 25000.0, "yes"));
 		travelData.add(new Travel("Eger", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Miskolc", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Salgotarjan", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Kecskemet", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Szekszard", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Pecs", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Szekesfehervar", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Tatabanya", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Kaposvar", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Veszprem", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Zalaegerszeg", 2500.0, 25000.0, "yes"));
+		travelData.add(new Travel("Szombathely", 2500.0, 25000.0, "yes"));
 	}	
 
 	public ObservableList<Travel> getTravelData() {
