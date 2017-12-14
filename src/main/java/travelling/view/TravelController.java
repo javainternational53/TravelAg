@@ -136,7 +136,7 @@ public class TravelController {
 			if (travelSearchData.size() != 0) {
 
 				try {
-					// Load the fxml file and create a new stage for the popup.
+					
 					FXMLLoader loader = new FXMLLoader();
 					loader.setLocation(MainApp.class.getResource("view/travelSearch.fxml"));
 					AnchorPane page = (AnchorPane) loader.load();
@@ -180,7 +180,7 @@ public class TravelController {
 					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
 					if (selectedTravelItem.getCity().equals("Budapest")) {
 						try {
-							// Load the fxml file and create a new stage for the popup.
+						
 							FXMLLoader loader = new FXMLLoader();
 							loader.setLocation(MainApp.class.getResource("view/budapest.fxml"));
 							AnchorPane page = (AnchorPane) loader.load();
@@ -203,18 +203,18 @@ public class TravelController {
 							e.printStackTrace();
 						}
 					}
-					/* Ide jon majd a cuccos */
+			
 
 					System.out.println(selectedTravelItem.getCity());
 				}
 				
-				// másik város 
+				// 
 				
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
 					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
 					if (selectedTravelItem.getCity().equals("Debrecen")) {
 						try {
-							// Load the fxml file and create a new stage for the popup.
+						
 							FXMLLoader loader = new FXMLLoader();
 							loader.setLocation(MainApp.class.getResource("view/debrecen.fxml"));
 							AnchorPane page = (AnchorPane) loader.load();
@@ -237,14 +237,620 @@ public class TravelController {
 							e.printStackTrace();
 						}
 					}
-					/* Ide jon majd a cuccos */
+				
 
 					System.out.println(selectedTravelItem.getCity());
 				}
 				
 				// *** 
 				
+				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+					if (selectedTravelItem.getCity().equals("Miskolc")) {
+						try {
+							
+							FXMLLoader loader = new FXMLLoader();
+							loader.setLocation(MainApp.class.getResource("view/miskolc.fxml"));
+							AnchorPane page = (AnchorPane) loader.load();
+							Stage dialogStage = new Stage();
+							dialogStage.setTitle("City");
+							dialogStage.initModality(Modality.WINDOW_MODAL);
+							dialogStage.initOwner(primaryStage);
+							Scene scene = new Scene(page);
+							dialogStage.setScene(scene);
+
+							// Set the persons into the controller.
+							// controller.setTravelController(travelSearchData);
+							/*
+							 * TravelSearchController controller = loader.getController();
+							 * controller.setTravelController(this);
+							 */
+							dialogStage.show();
+
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+		
+
+					System.out.println(selectedTravelItem.getCity());
+				}
+				
+			
+				
+	
+			
+			
+			if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+				Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+				if (selectedTravelItem.getCity().equals("Szeged")) {
+					try {
+				
+						FXMLLoader loader = new FXMLLoader();
+						loader.setLocation(MainApp.class.getResource("view/szeged.fxml"));
+						AnchorPane page = (AnchorPane) loader.load();
+						Stage dialogStage = new Stage();
+						dialogStage.setTitle("City");
+						dialogStage.initModality(Modality.WINDOW_MODAL);
+						dialogStage.initOwner(primaryStage);
+						Scene scene = new Scene(page);
+						dialogStage.setScene(scene);
+
+						// Set the persons into the controller.
+						// controller.setTravelController(travelSearchData);
+						/*
+						 * TravelSearchController controller = loader.getController();
+						 * controller.setTravelController(this);
+						 */
+						dialogStage.show();
+
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+	
+
+				System.out.println(selectedTravelItem.getCity());
 			}
+			
+			// *** 
+			
+		
+			
+			
+			if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+				Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+				if (selectedTravelItem.getCity().equals("Győr")) {
+					try {
+						
+						FXMLLoader loader = new FXMLLoader();
+						loader.setLocation(MainApp.class.getResource("view/gyor.fxml"));
+						AnchorPane page = (AnchorPane) loader.load();
+						Stage dialogStage = new Stage();
+						dialogStage.setTitle("City");
+						dialogStage.initModality(Modality.WINDOW_MODAL);
+						dialogStage.initOwner(primaryStage);
+						Scene scene = new Scene(page);
+						dialogStage.setScene(scene);
+
+						// Set the persons into the controller.
+						// controller.setTravelController(travelSearchData);
+						/*
+						 * TravelSearchController controller = loader.getController();
+						 * controller.setTravelController(this);
+						 */
+						dialogStage.show();
+
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+		
+
+				System.out.println(selectedTravelItem.getCity());
+			}
+			
+			// *** 
+			
+		
+		
+		
+		if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+			Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+			if (selectedTravelItem.getCity().equals("Nyiregyhaza")) {
+				try {
+					
+					FXMLLoader loader = new FXMLLoader();
+					loader.setLocation(MainApp.class.getResource("view/nyiregyhaza.fxml"));
+					AnchorPane page = (AnchorPane) loader.load();
+					Stage dialogStage = new Stage();
+					dialogStage.setTitle("City");
+					dialogStage.initModality(Modality.WINDOW_MODAL);
+					dialogStage.initOwner(primaryStage);
+					Scene scene = new Scene(page);
+					dialogStage.setScene(scene);
+
+					// Set the persons into the controller.
+					// controller.setTravelController(travelSearchData);
+					/*
+					 * TravelSearchController controller = loader.getController();
+					 * controller.setTravelController(this);
+					 */
+					dialogStage.show();
+
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		
+
+			System.out.println(selectedTravelItem.getCity());
+		}
+		
+		// *** 
+		
+	
+	
+	
+	if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+		Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+		if (selectedTravelItem.getCity().equals("Bekescsaba")) {
+			try {
+				
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(MainApp.class.getResource("view/bekescsaba.fxml"));
+				AnchorPane page = (AnchorPane) loader.load();
+				Stage dialogStage = new Stage();
+				dialogStage.setTitle("City");
+				dialogStage.initModality(Modality.WINDOW_MODAL);
+				dialogStage.initOwner(primaryStage);
+				Scene scene = new Scene(page);
+				dialogStage.setScene(scene);
+
+				// Set the persons into the controller.
+				// controller.setTravelController(travelSearchData);
+				/*
+				 * TravelSearchController controller = loader.getController();
+				 * controller.setTravelController(this);
+				 */
+				dialogStage.show();
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+
+		System.out.println(selectedTravelItem.getCity());
+	}
+	
+	// *** 
+	
+
+
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Szolnok")) {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/szolnok.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+// *** 
+
+
+
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Eger")) {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/eger.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+// *** 
+
+
+
+
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Salgotarjan")) {
+		try {
+	
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/salgotarjan.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+// *** 
+
+
+
+
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Kecskemet")) {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/kecskemet.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+// *** 
+
+
+
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Szekszard")) {
+		try {
+	
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/szekszard.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Pecs")) {
+		try {
+	
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/pecs.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	System.out.println(selectedTravelItem.getCity());
+}
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Szekesfehervar")) {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/szekesfehervar.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Tatabanya")) {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/tatabanya.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Kaposvar")) {
+		try {
+	
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/kaposvar.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Veszprem")) {
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/veszprem.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Zalaegerszeg")) {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/zalaegerszeg.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+
+if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+	Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
+	if (selectedTravelItem.getCity().equals("Szombathely")) {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/szombathely.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("City");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the persons into the controller.
+			// controller.setTravelController(travelSearchData);
+			/*
+			 * TravelSearchController controller = loader.getController();
+			 * controller.setTravelController(this);
+			 */
+			dialogStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	System.out.println(selectedTravelItem.getCity());
+}
+
+
+
+
+// *** 
+
+			}		
+				
 		});
 	}
 
