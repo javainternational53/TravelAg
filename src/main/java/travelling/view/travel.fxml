@@ -22,6 +22,7 @@
                       <TableColumn fx:id="minPriceColumn" prefWidth="75.0" text="MinPrice" />
                         <TableColumn fx:id="maxPriceColumn" prefWidth="75.0" text="MaxPrice" />
                         <TableColumn fx:id="packageOfferColumn" prefWidth="75.0" text="PackageOffer" />
+                        <TableColumn fx:id="numberOfPersonsColumn" prefWidth="75.0" text="NumberOfPersons" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

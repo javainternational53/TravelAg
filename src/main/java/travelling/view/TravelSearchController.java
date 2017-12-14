@@ -23,6 +23,8 @@ public class TravelSearchController {
 	private TableColumn<Travel, Double> maxPriceColumn;
 	@FXML
 	private TableColumn<Travel, String> packageOfferColumn;
+	@FXML
+	private TableColumn<Travel, Integer> numberOfPersonsColumn;
 	
 	private MainApp mainApp;
 	private Stage primaryStage;
@@ -37,6 +39,7 @@ public class TravelSearchController {
 		minPriceColumn.setCellValueFactory(cellData -> cellData.getValue().minPriceProperty().asObject());
 		maxPriceColumn.setCellValueFactory(cellData -> cellData.getValue().maxPriceProperty().asObject());
 		packageOfferColumn.setCellValueFactory(cellData -> cellData.getValue().packageOfferProperty());
+		numberOfPersonsColumn.setCellValueFactory(cellData -> cellData.getValue().numberOfPersonsProperty().asObject());
 	}/*
 	public void setTravelController(TravelController travelController)
 	{
