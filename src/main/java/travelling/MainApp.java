@@ -33,13 +33,11 @@ public class MainApp extends Application {
 		travelData.add(new Travel("Debrecen", 100.0, 30000.0, "yes"));
 		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, "yes"));
 		travelData.add(new Travel("Szeged", 3000.0, 20000.0, "yes"));
-		travelData.add(new Travel("Gyır", 3000.0, 30000.0, "yes"));
+		travelData.add(new Travel("Gy≈ër", 3000.0, 30000.0, "yes"));
 		travelData.add(new Travel("Nyiregyhaza", 2500.0, 25000.0, "yes"));
 		travelData.add(new Travel("Bekescsaba", 2500.0, 25000.0, "yes"));
-		travelData.add(new Travel("Szeged", 2500.0, 25000.0, "yes"));
 		travelData.add(new Travel("Szolnok", 2500.0, 25000.0, "yes"));
 		travelData.add(new Travel("Eger", 2500.0, 25000.0, "yes"));
-		travelData.add(new Travel("Miskolc", 2500.0, 25000.0, "yes"));
 		travelData.add(new Travel("Salgotarjan", 2500.0, 25000.0, "yes"));
 		travelData.add(new Travel("Kecskemet", 2500.0, 25000.0, "yes"));
 		travelData.add(new Travel("Szekszard", 2500.0, 25000.0, "yes"));
