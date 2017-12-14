@@ -22,7 +22,7 @@ public class TravelSearchController {
 	@FXML
 	private TableColumn<Travel, Double> maxPriceColumn;
 	@FXML
-	private TableColumn<Travel, Integer> hotelsNumberColumn;
+	private TableColumn<Travel, String> packageOfferColumn;
 	
 	private MainApp mainApp;
 	private Stage primaryStage;
@@ -36,7 +36,7 @@ public class TravelSearchController {
 		cityColumn.setCellValueFactory(cellData -> cellData.getValue().cityProperty());
 		minPriceColumn.setCellValueFactory(cellData -> cellData.getValue().minPriceProperty().asObject());
 		maxPriceColumn.setCellValueFactory(cellData -> cellData.getValue().maxPriceProperty().asObject());
-		hotelsNumberColumn.setCellValueFactory(cellData -> cellData.getValue().hotelsNumberProperty().asObject());
+		packageOfferColumn.setCellValueFactory(cellData -> cellData.getValue().packageOfferProperty());
 	}/*
 	public void setTravelController(TravelController travelController)
 	{

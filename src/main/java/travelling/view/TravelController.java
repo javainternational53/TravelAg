@@ -39,7 +39,7 @@ public class TravelController {
 	@FXML
 	private TableColumn<Travel, Double> maxPriceColumn;
 	@FXML
-	private TableColumn<Travel, Integer> hotelsNumberColumn;
+	private TableColumn<Travel, String> packageOfferColumn;
 
 	@FXML
 	private TextField minPriceInput = new TextField();
@@ -95,7 +95,7 @@ public class TravelController {
 		cityColumn.setCellValueFactory(cellData -> cellData.getValue().cityProperty());
 		minPriceColumn.setCellValueFactory(cellData -> cellData.getValue().minPriceProperty().asObject());
 		maxPriceColumn.setCellValueFactory(cellData -> cellData.getValue().maxPriceProperty().asObject());
-		hotelsNumberColumn.setCellValueFactory(cellData -> cellData.getValue().hotelsNumberProperty().asObject());
+		packageOfferColumn.setCellValueFactory(cellData -> cellData.getValue().packageOfferProperty());
 		/*
 		 * if(LoginController.loginout == false) System.out.println("asd"); else
 		 * System.out.println("uio");
