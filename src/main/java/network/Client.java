@@ -8,7 +8,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 
 import javax.net.SocketFactory;
-import javax.net.ssl.SSLSocketFactory;
+
 
 import travelling.model.AttachmentType;
 import travelling.model.NetworkMessage;
@@ -23,10 +23,13 @@ public class Client {
 	int port=8080;
 	
 	public Client() {
-		SocketFactory factory=SSLSocketFactory.getDefault();
+		SocketFactory factory=SocketFactory.getDefault();
+		
 		try {
 			socket=factory.createSocket();
-			socket.connect(new InetSocketAddress(InetAddress.getLocalHost(), port));
+			
+			socket.connect(new InetSocketAddress("localhost", port));
+			
 			input=new ObjectInputStream(socket.getInputStream());
 			output=new ObjectOutputStream(socket.getOutputStream());
 		} catch (IOException e) {
@@ -40,21 +43,28 @@ public class Client {
 		System.out.println("Sending request");
 		NetworkMessage request,response;
 		User userToAttach=new User();
+		System.out.println("Sending Request 2");
 		userToAttach.setUsername(user);
+		System.out.println("Sending Request 3");
 		userToAttach.setPassword(password);
+		
 		request=new NetworkMessage();
-		request.setAttachment(user);
+		request.setAttachment(userToAttach);
 		request.setAttachmentType(AttachmentType.USER);
 		request.setRequest("Login");
+		System.out.println("Sending Request 4");
 		return sendRequest(request);
 		
 	}
 	
 	private NetworkMessage sendRequest(NetworkMessage request) {
 		NetworkMessage response=null;
+		System.out.println("Sending Request 5");
 		try {
 			output.writeObject(request);
+			System.out.println("Sending Request 6");
 			response=(NetworkMessage) input.readObject();
+			System.out.println("Sending Request 7");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

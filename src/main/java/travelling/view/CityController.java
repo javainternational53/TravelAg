@@ -12,7 +12,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class BudapestController {
+public class CityController {
 	@FXML
 	private CheckBox termalBathCb;
 	@FXML

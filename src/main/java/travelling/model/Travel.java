@@ -11,17 +11,17 @@ public class Travel {
 	private StringProperty city;
 	private DoubleProperty minPrice;
 	private DoubleProperty maxPrice;
-	private IntegerProperty hotelsNumber;
+	private StringProperty packageOffer;
 	
 	public Travel(){
 	}
 
-	public Travel(String city, Double minPrice, Double maxPrice, int hotelsNumber) {
+	public Travel(String city, Double minPrice, Double maxPrice, String packageOffer) {
 		super();
 		this.city = new SimpleStringProperty(city);
 		this.minPrice = new SimpleDoubleProperty(minPrice);
 		this.maxPrice = new SimpleDoubleProperty(maxPrice);
-		this.hotelsNumber = new SimpleIntegerProperty(hotelsNumber);
+		this.packageOffer = new SimpleStringProperty(packageOffer);
 	}
 	
 	public String getCity() {
@@ -54,13 +54,13 @@ public class Travel {
 		return maxPrice;
 	}
 	
-	public int getHotelsNumber() {
-		return hotelsNumber.get();
+	public String getPackageOffer() {
+		return packageOffer.get();
 	}
-	public void setHotelsNumber(int hotelsNumber) {
-		this.hotelsNumber.set(hotelsNumber);
+	public void setPackageOffer(String packageOffer) {
+		this.packageOffer.set(packageOffer);
 	}
-	public IntegerProperty hotelsNumberProperty() {
-		return hotelsNumber;
+	public StringProperty packageOfferProperty() {
+		return packageOffer;
 	}
 }

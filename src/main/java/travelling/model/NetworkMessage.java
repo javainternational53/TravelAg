@@ -1,6 +1,8 @@
 package travelling.model;
 
-public class NetworkMessage {
+import java.io.Serializable;
+
+public class NetworkMessage implements Serializable{
 	
 	private String message;
 	private Object attachment;
@@ -39,5 +41,9 @@ public class NetworkMessage {
 		this.attachmentType = attachmentType;
 	}
 	
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "[ message="+message+", type="+attachmentType+", attachment="+attachment.toString()+" ]";
+	}
 }

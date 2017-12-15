@@ -1,10 +1,13 @@
 package travelling.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -12,16 +15,24 @@ import javafx.beans.property.StringProperty;
 
 @Entity
 @Table(name = "User")
-public class User {
+public class User implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	long id;
 	
-	StringProperty username;
+	String FirstName;
 	
-	StringProperty password;
+	String LastName;
+	
+	String username;
+	
+	String password;
 
+	String email;
+	
+	String BankCard;
+	
 	
 	
 	public User() {
@@ -31,8 +42,9 @@ public class User {
 	public User(long id, String username, String password) {
 		super();
 		this.id = id;
-		this.username = new SimpleStringProperty(username);
-		this.password = new SimpleStringProperty(password);
+		this.username = username;
+		this.password = password;
+		
 	}
 
 	public long getId() {
@@ -44,25 +56,27 @@ public class User {
 	}
 
 	public String getUsername() {
-		return username.get();
-	}
-
-	public void setUsername(String username) {
-		this.username.set(username);
-	}
-	public StringProperty userNameProperty() {
 		return username;
 	}
 
+	public void setUsername(String username) {
+		this.username=username;
+	}
+
 	public String getPassword() {
-		return password.get();
+		return password;
 	}
 
 	public void setPassword(String password) {
-		this.password.set(password);;
+		this.password=password;
 	}
+	
+	public StringProperty userNameProperty() {
+		return new SimpleStringProperty(username);
+	}
+	
 	public StringProperty passwordProperty() {
-		return password;
+		return new SimpleStringProperty(password);
 	}
 
 	@Override

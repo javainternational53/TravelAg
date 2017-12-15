@@ -21,7 +21,7 @@
                       <TableColumn fx:id="cityColumn" prefWidth="75.0" text="City" />
                       <TableColumn fx:id="minPriceColumn" prefWidth="75.0" text="MinPrice" />
                         <TableColumn fx:id="maxPriceColumn" prefWidth="75.0" text="MaxPrice" />
-                        <TableColumn fx:id="hotelsNumberColumn" prefWidth="75.0" text="HotelsNumber" />
+                        <TableColumn fx:id="packageOfferColumn" prefWidth="75.0" text="PackageOffer" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
