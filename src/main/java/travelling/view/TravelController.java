@@ -71,6 +71,10 @@ public class TravelController {
 	private Text bejelentkezve;
 	@FXML
 	private Text usernameText;
+	@FXML
+	private Text usernameLabel;
+	@FXML
+	private Text passwordLabel;
 
 	@FXML
 	private MainApp mainApp;
@@ -158,6 +162,8 @@ public class TravelController {
 					usernameText.setText(userName.getText());
 					usernameText.setVisible(true);
 					signUpButton.setVisible(false);
+					usernameLabel.setVisible(false);
+					passwordLabel.setVisible(false);
 					loginButton.setText("Logout");
 					break;
 				} else if (userAll.size() == count) {
@@ -177,6 +183,8 @@ public class TravelController {
 					usernameText.setText("");
 					usernameText.setVisible(false);
 					signUpButton.setVisible(true);
+					usernameLabel.setVisible(true);
+					passwordLabel.setVisible(true);
 					loginButton.setText("Login");
 					break;
 				}

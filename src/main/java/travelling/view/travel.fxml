@@ -65,6 +65,16 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
+                  <Text fx:id="usernameLabel" fill="#3196de" layoutX="73.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="passwordLabel" fill="#3196de" layoutX="75.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
                </children></AnchorPane>
         </items>
       </SplitPane>
