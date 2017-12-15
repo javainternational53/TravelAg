@@ -102,9 +102,10 @@ public class TravelController {
 		System.out.println("making travel");
 		
 		try {
-		client.SendLoginRequest("test", "asd");
+		//client.SendLoginRequest("test", "asd");
 		User user=(User)(client.SendLoginRequest("Test", "Test")).getAttachment();
-		System.out.println();
+		System.out.println(user);
+		
 		}catch(Exception e) {
 			System.out.println("dasgebasz"+e.getMessage());
 			

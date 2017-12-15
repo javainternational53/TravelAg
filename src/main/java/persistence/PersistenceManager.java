@@ -6,7 +6,6 @@ import javax.persistence.EntityManagerFactory;
 import org.mindrot.jbcrypt.BCrypt;
 
 import travelling.model.Quality;
-import travelling.model.Szallas;
 import travelling.model.User;
 
 import java.util.LinkedList;
@@ -55,48 +54,6 @@ public class PersistenceManager {
 		em.close();
 	}
 	
-	public static void createSzallas(Szallas szallas) {
-		EntityManager em=getEntityManager();
-		
-		em.persist(szallas);
-		
-		em.close();
-	}
-	
-	public static List<Szallas> getAllSzallas(){
-		EntityManager em=getEntityManager();
-		List<Szallas> szallasList=new LinkedList<Szallas>(); 
-		
-		Query query = em.createQuery("SELECT s from Szallas s");
-		szallasList = query.getResultList();
-		
-		em.close();
-		return szallasList;
-	}
-	
-	public static List<Szallas> getSzallasByLocation(String location){
-		EntityManager em=getEntityManager();
-		List<Szallas> szallasList=new LinkedList<Szallas>(); 
-		
-		Query query = em.createQuery("SELECT s from Szallas s WHERE location LIKE :loc");
-		query.setParameter("loc", location);
-		szallasList = query.getResultList();
-		
-		em.close();
-		return szallasList;
-	}
-	
-	public static List<Szallas> getSzallasByQuality(Quality quality){
-		EntityManager em=getEntityManager();
-		List<Szallas> szallasList=new LinkedList<Szallas>(); 
-		
-		Query query = em.createQuery("SELECT s from Szallas s WHERE location LIKE :qual");
-		query.setParameter("qual", quality);
-		szallasList = query.getResultList();
-		
-		em.close();
-		return szallasList;
-	}
 	
 	
 }

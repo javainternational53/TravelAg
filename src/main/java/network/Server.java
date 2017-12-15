@@ -65,7 +65,8 @@ public class Server implements Runnable {
 				System.out.println("Socket created");
 				Thread newThread=new Thread(newServer);
 				System.out.println("socket running");
-				newThread.run();
+				newThread.start();
+				sortConnections();
 				connections.add(newThread);
 				System.out.println("You can't stop socket now MWahahahaha...");
 				
@@ -75,6 +76,11 @@ public class Server implements Runnable {
 			}
 		}
 			
+	}
+
+	private void sortConnections() {
+		
+		
 	}
 	
 	

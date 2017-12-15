@@ -19,19 +19,19 @@ public class User implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	long id;
+	private long id;
 	
-	String FirstName;
+	private String FirstName;
 	
-	String LastName;
+	private String LastName;
 	
-	String username;
+	private String username;
 	
-	String password;
+	private String password;
 
-	String email;
+	private String email;
 	
-	String BankCard;
+	private String BankCard;
 	
 	
 	

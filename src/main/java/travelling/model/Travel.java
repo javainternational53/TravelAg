@@ -1,5 +1,11 @@
 package travelling.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -7,72 +13,79 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+@Entity
+@Table(name = "Travel")
 public class Travel {
-	private StringProperty city;
-	private DoubleProperty minPrice;
-	private DoubleProperty maxPrice;
-	private StringProperty packageOffer;
-	private IntegerProperty numberOfPersons;
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long Id;
+	private String city;
+	private Double minPrice;
+	private Double maxPrice;
+	private String packageOffer;
+	private Integer numberOfPersons;
 	
 	public Travel(){
 	}
 
 	public Travel(String city, Double minPrice, Double maxPrice, String packageOffer, int numberOfPersons) {
 		super();
-		this.city = new SimpleStringProperty(city);
-		this.minPrice = new SimpleDoubleProperty(minPrice);
-		this.maxPrice = new SimpleDoubleProperty(maxPrice);
-		this.packageOffer = new SimpleStringProperty(packageOffer);
-		this.numberOfPersons = new SimpleIntegerProperty(numberOfPersons);
+		this.city = city;
+		this.minPrice = minPrice;
+		this.maxPrice = maxPrice;
+		this.packageOffer = packageOffer;
+		this.numberOfPersons = numberOfPersons;
 	}
 	
 	public String getCity() {
-		return city.get();
+		return city;
 	}
 	public void setCity(String city) {
-		this.city.set(city);
+		this.city = city;
 	}
 	public StringProperty cityProperty() {
-		return city;
+		return new SimpleStringProperty(city);
 	}
 	
 	public Double getMinPrice() {
-		return minPrice.get();
+		return minPrice;
 	}
 	public void setMinPrice(Double minPrice) {
-		this.minPrice.set(minPrice);
+		this.minPrice = minPrice;
 	}
 	public DoubleProperty minPriceProperty() {
-		return minPrice;
+		return new SimpleDoubleProperty(minPrice);
 	}
 	
 	public Double getMAxPrice() {
-		return maxPrice.get();
+		return maxPrice;
 	}
 	public void setMaxPrice(Double maxPrice) {
-		this.maxPrice.set(maxPrice);
+		this.maxPrice=maxPrice;
 	}
 	public DoubleProperty maxPriceProperty() {
-		return maxPrice;
+		return new SimpleDoubleProperty(maxPrice);
 	}
 	
 	public String getPackageOffer() {
-		return packageOffer.get();
+		return packageOffer;
 	}
 	public void setPackageOffer(String packageOffer) {
-		this.packageOffer.set(packageOffer);
+		this.packageOffer=packageOffer;
 	}
 	public StringProperty packageOfferProperty() {
-		return packageOffer;
+		return new SimpleStringProperty(packageOffer);
 	}
 	
 	public int getNumberOfPersons() {
-		return numberOfPersons.get();
+		return numberOfPersons;
 	}
 	public void setNumberOfPersons(int numberOfPersons) {
-		this.numberOfPersons.set(numberOfPersons);
+		this.numberOfPersons=numberOfPersons;
 	}
 	public IntegerProperty numberOfPersonsProperty() {
-		return numberOfPersons;
+		return new SimpleIntegerProperty(numberOfPersons);
 	}
 }

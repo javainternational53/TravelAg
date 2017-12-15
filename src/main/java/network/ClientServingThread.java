@@ -54,6 +54,9 @@ public class ClientServingThread implements Runnable {
 			}catch(Exception e) {
 				running=false;
 				e.printStackTrace();
+			}finally {
+				running=false;
+				
 			}
 			
 			
@@ -62,12 +65,13 @@ public class ClientServingThread implements Runnable {
 	}
 	
 	private NetworkMessage processMessage(NetworkMessage message){
-		System.out.println(message);
+		//System.out.println(message);
 		NetworkMessage messageToReturn=new NetworkMessage();
 		messageToReturn.setRequest("failure");
 		if(message.getRequest().equals("Login"));{
 			User userToLogin=(User)message.getAttachment();
 			User foundUser=PersistenceManager.getUserByName(userToLogin.getUsername());
+			System.out.println(foundUser);
 			if(BCrypt.checkpw(userToLogin.getPassword(), foundUser.getPassword())) {
 				foundUser.setPassword("");
 				messageToReturn.setRequest("Login response");
