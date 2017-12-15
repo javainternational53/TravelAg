@@ -33,7 +33,7 @@ public class MainApp extends Application {
 		travelData.add(new Travel("Debrecen", 100.0, 30000.0, "yes",2));
 		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, "yes",2));
 		travelData.add(new Travel("Szeged", 3000.0, 20000.0, "yes",2));
-		travelData.add(new Travel("Győr", 3000.0, 30000.0, "yes",2));
+		travelData.add(new Travel("Gyor", 3000.0, 30000.0, "yes",2));
 		travelData.add(new Travel("Nyiregyhaza", 2500.0, 25000.0, "yes",2));
 		travelData.add(new Travel("Bekescsaba", 2500.0, 25000.0, "yes",2));
 		travelData.add(new Travel("Szolnok", 2500.0, 25000.0, "yes",2));
