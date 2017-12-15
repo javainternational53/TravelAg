@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.CityController">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.CityController">
    <children>
-      <Pane prefHeight="150.0" prefWidth="1000.0" style="-fx-background-color: #3196DE;">
+      <Pane prefHeight="150.0" prefWidth="1000.0" styleClass="pane">
          <children>
             <Label layoutX="368.0" layoutY="29.0" text="Miskolc" textFill="WHITE">
                <font>
