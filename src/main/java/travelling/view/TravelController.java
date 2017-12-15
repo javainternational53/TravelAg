@@ -219,10 +219,6 @@ public class TravelController {
 				if (minPrice <= travel.getMinPrice() && maxPrice >= travel.getMAxPrice()
 						&& (city.equals(travel.getCity()) || city.length() == 0)) {
 					travelSearchData.add(travel);
-					System.out.println(travelSearchData.get(0).getCity());
-					// System.out.println(mainApp.getTravelSearchData().get(0).getCity());
-					// System.out.println(travelSearchData);
-					// System.out.println(travel.getCity());
 				}
 			}
 			if (travelSearchData.size() != 0) {
@@ -296,7 +292,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				//
@@ -329,7 +325,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -362,7 +358,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -393,7 +389,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -426,7 +422,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -459,7 +455,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -492,7 +488,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -525,7 +521,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -558,7 +554,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -591,7 +587,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -624,7 +620,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				// ***
@@ -657,7 +653,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -688,7 +684,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
 					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
@@ -718,7 +714,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -749,7 +745,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -780,7 +776,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -811,7 +807,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -842,7 +838,7 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -873,10 +869,8 @@ public class TravelController {
 						}
 					}
 
-					System.out.println(selectedTravelItem.getCity());
+					
 				}
-
-				// ***
 
 			}
 
