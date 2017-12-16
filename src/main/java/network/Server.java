@@ -16,6 +16,16 @@ public class Server implements Runnable {
 	private int port;
 	private boolean running;
 	
+	
+	
+	public boolean isRunning() {
+		return running;
+	}
+
+	public void setRunning(boolean running) {
+		this.running = running;
+	}
+
 	public ArrayList<Thread> getConnections() {
 		return connections;
 	}
@@ -43,6 +53,7 @@ public class Server implements Runnable {
 	public Server() {
 		this.port = 8080;
 		try {
+			
 			ServerSocketFactory factory=ServerSocketFactory.getDefault();
 			serverSocket=factory.createServerSocket(port);
 			running=true;
@@ -79,7 +90,14 @@ public class Server implements Runnable {
 	}
 
 	private void sortConnections() {
-		
+		for(Thread t : connections) 
+		{
+			if(!t.isAlive()) 
+			{
+				connections.remove(t);
+			}
+			
+		}
 		
 	}
 	

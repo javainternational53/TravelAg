@@ -26,8 +26,9 @@ public class PersistenceManager {
 	public static User getUserByName(String name) {
 		
 		User user=null;
+		EntityManager em=null;
 		try {
-		EntityManager em=getEntityManager();
+		em=getEntityManager();
 		
 		Query query = em.createQuery("SELECT u FROM User u WHERE username LIKE :uName");
 		query.setParameter("uName", name);
@@ -39,6 +40,8 @@ public class PersistenceManager {
 			user.setPassword(BCrypt.hashpw("Test", BCrypt.gensalt()));
 			user.setUsername("Test");
 			user.setId(1);
+		}finally {
+			em.close();
 		}
 		return user;
 	}

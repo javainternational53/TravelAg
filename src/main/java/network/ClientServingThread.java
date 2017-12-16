@@ -20,6 +20,11 @@ public class ClientServingThread implements Runnable {
 	User associatedUser;
 	private boolean running;
 	
+	void createTestUser(){
+		User user=new User();
+		user.setUsername("testuser99");
+	}
+	
 	public ClientServingThread(Socket socket) {
 		super();
 		this.socket = socket;
@@ -58,8 +63,6 @@ public class ClientServingThread implements Runnable {
 				running=false;
 				
 			}
-			
-			
 		}
 
 	}
@@ -73,6 +76,7 @@ public class ClientServingThread implements Runnable {
 			User foundUser=PersistenceManager.getUserByName(userToLogin.getUsername());
 			System.out.println(foundUser);
 			if(BCrypt.checkpw(userToLogin.getPassword(), foundUser.getPassword())) {
+				associatedUser=foundUser;
 				foundUser.setPassword("");
 				messageToReturn.setRequest("Login response");
 				messageToReturn.setAttachment(foundUser);

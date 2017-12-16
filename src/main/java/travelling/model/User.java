@@ -83,6 +83,53 @@ public class User implements Serializable{
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
 	}
+
+	public String getFirstName() {
+		return FirstName;
+	}
+
+	public void setFirstName(String firstName) {
+		FirstName = firstName;
+	}
 	
+	public StringProperty firstNameProperty() {
+		return new SimpleStringProperty(FirstName);
+	}
+
+	public String getLastName() {
+		return LastName;
+	}
+
+	public void setLastName(String lastName) {
+		LastName = lastName;
+	}
+
+	public StringProperty lastNameProperty() {
+		return new SimpleStringProperty(LastName);
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public StringProperty emailProperty() {
+		return new SimpleStringProperty(email);
+	}
+	
+	public String getBankCard() {
+		return BankCard;
+	}
+
+	public void setBankCard(String bankCard) {
+		BankCard = bankCard;
+	}
+	
+	public StringProperty bankCardProperty() {
+		return new SimpleStringProperty(BankCard);
+	}
 	
 }
