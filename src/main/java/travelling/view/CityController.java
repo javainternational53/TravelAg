@@ -190,7 +190,7 @@ public class CityController {
     void accept(ActionEvent event) throws IOException {
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/foglalas.fxml"));
-		Scene scene = new Scene(root, 450, 370);
+		Scene scene = new Scene(root, 500, 215);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Accept");
 		primaryStage.show();
