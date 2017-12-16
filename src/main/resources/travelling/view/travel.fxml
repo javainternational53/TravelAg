@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.TravelController">
+   <children>
+      <SplitPane dividerPositions="0.591182364729459" layoutX="388.0" layoutY="207.0" prefHeight="600.0" prefWidth="1000.0" styleClass="background" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="travelTable" layoutX="31.0" layoutY="155.0" prefHeight="371.0" prefWidth="524.0" stylesheets="@style.css">
+                    <columns>
+                      <TableColumn fx:id="cityColumn" prefWidth="75.0" text="City" />
+                      <TableColumn fx:id="minPriceColumn" prefWidth="75.0" text="MinPrice" />
+                        <TableColumn fx:id="maxPriceColumn" prefWidth="75.0" text="MaxPrice" />
+                        <TableColumn fx:id="packageOfferColumn" prefWidth="75.0" text="PackageOffer" />
+                        <TableColumn fx:id="numberOfPersonsColumn" prefWidth="75.0" text="NumberOfPersons" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Label layoutX="183.0" layoutY="66.0" stylesheets="@style.css" text="Select Trip" textFill="#3196de">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="185.0" layoutY="109.0" prefHeight="76.0" prefWidth="124.0" text="Search" textFill="#3196de">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="200.0" stylesheets="@style.css" text="City" textFill="#3196de" />
+                  <Label layoutX="29.0" layoutY="274.0" stylesheets="@style.css" text="MinPrice" textFill="#3196de" />
+                  <Label layoutX="28.0" layoutY="352.0" stylesheets="@style.css" text="MaxPrice" textFill="#3196de" />
+                  <TextField fx:id="cityInput" alignment="CENTER" layoutX="153.0" layoutY="195.0" promptText="City" />
+                  <TextField fx:id="minPriceInput" alignment="CENTER" layoutX="153.0" layoutY="269.0" promptText="1" />
+                  <TextField fx:id="maxPriceInput" alignment="CENTER" layoutX="153.0" layoutY="347.0" promptText="1000000" />
+                  <Button fx:id="searchButton" layoutX="285.0" layoutY="482.0" mnemonicParsing="false" stylesheets="@style.css" text="Search" textFill="#3196de" />
+                  <Button fx:id="clearButton" layoutX="170.0" layoutY="482.0" mnemonicParsing="false" stylesheets="@style.css" text="Clear" textFill="#3196de" />
+                  <TextField fx:id="userName" layoutX="170.0" layoutY="19.0" prefHeight="31.0" prefWidth="124.0" promptText="username" />
+                  <PasswordField fx:id="password" layoutX="170.0" layoutY="67.0" prefHeight="31.0" prefWidth="124.0" promptText="password" />
+                <Button fx:id="loginButton" layoutX="322.0" layoutY="19.0" mnemonicParsing="false" stylesheets="@style.css" text="Login" textFill="#3196de" />
+                  <Button fx:id="signUpButton" layoutX="314.0" layoutY="67.0" mnemonicParsing="false" onAction="#SignUp" stylesheets="@style.css" text="Sign Up" textFill="#3196de" />
+                  <Text fx:id="bejelentkezve" fill="WHITE" layoutX="160.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bejelentkezve">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="usernameText" fill="WHITE" layoutX="210.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="usernameLabel" fill="WHITE" layoutX="73.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Username:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="passwordLabel" fill="WHITE" layoutX="75.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
