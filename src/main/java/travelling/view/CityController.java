@@ -8,7 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -51,7 +53,19 @@ public class CityController {
 	@FXML
 	private TextField zooPrice;
 	
-	private static double price;
+	@FXML
+	private Button Accept = new Button();
+	
+	@FXML
+	public Label cityName;
+	
+	public Label getCityName() {
+		return cityName;
+	}
+	public void setCityName(Label cityName) {
+		this.cityName = cityName;
+	}
+	public static double price;
 	@FXML
 	private void initialize() {
 		price  = Double.parseDouble(startingPrice.getText());
@@ -172,4 +186,15 @@ public class CityController {
         ((Node)(event.getSource())).getScene().getWindow().hide();
 
     }
+	@FXML
+    void accept(ActionEvent event) throws IOException {
+		Stage primaryStage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/foglalas.fxml"));
+		Scene scene = new Scene(root, 450, 370);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("Accept");
+		primaryStage.show();
+		((Node)(event.getSource())).getScene().getWindow().hide();
+		System.out.println("ok");
+	}
 }
