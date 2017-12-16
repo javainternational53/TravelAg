@@ -9,17 +9,18 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.RegisterController">
    <children>
-      <Label layoutX="85.0" layoutY="31.0" text="Register" textFill="#3196de">
+      <Label layoutX="85.0" layoutY="14.0" text="Register" textFill="#3196de">
          <font>
             <Font size="64.0" />
          </font>
       </Label>
-      <TextField fx:id="fxFirstName" layoutX="107.0" layoutY="149.0" promptText="FirstName" />
-      <TextField fx:id="fxLastName" layoutX="107.0" layoutY="219.0" promptText="LastName" />
-      <TextField fx:id="fxUserName" layoutX="107.0" layoutY="285.0" promptText="UserName" />
-      <TextField fx:id="fxEmail" layoutX="107.0" layoutY="412.0" promptText="Email" />
-      <PasswordField fx:id="fxPassword" layoutX="107.0" layoutY="349.0" promptText="Password" />
+      <TextField fx:id="fxFirstName" layoutX="107.0" layoutY="117.0" promptText="FirstName" />
+      <TextField fx:id="fxLastName" layoutX="107.0" layoutY="171.0" promptText="LastName" />
+      <TextField fx:id="fxUserName" layoutX="107.0" layoutY="225.0" promptText="UserName" />
+      <TextField fx:id="fxEmail" layoutX="107.0" layoutY="340.0" promptText="Email" />
+      <PasswordField fx:id="fxPassword" layoutX="107.0" layoutY="283.0" promptText="Password" />
       <Button fx:id="fxClear" layoutX="107.0" layoutY="455.0" mnemonicParsing="false" onAction="#ReseAll" text="Clear" textFill="#3196de" />
-      <Button fx:id="fxSignUp" layoutX="223.0" layoutY="455.0" mnemonicParsing="false" text="SignUp" textFill="#3196de" />
+      <Button fx:id="fxSignUp" layoutX="223.0" layoutY="455.0" mnemonicParsing="false" onAction="#SignUp" text="SignUp" textFill="#3196de" />
+      <TextField fx:id="fxBankCardNumber" layoutX="107.0" layoutY="395.0" promptText="BankCardNumber" />
    </children>
 </AnchorPane>
