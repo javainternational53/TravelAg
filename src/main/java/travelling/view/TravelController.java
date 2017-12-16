@@ -29,6 +29,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import network.Client;
 import travelling.MainApp;
+import travelling.model.NetworkMessage;
 import travelling.model.Travel;
 import travelling.model.User;
 
@@ -101,13 +102,17 @@ public class TravelController {
 		client = new Client();
 		System.out.println("making travel");
 		
+		/*
+		client.SendLoginRequest("tetuser99", "testPass");
+		System.out.println("making travel");
+		*/
 		try {
-		//client.SendLoginRequest("test", "asd");
-		User user=(User)(client.SendLoginRequest("Test", "Test")).getAttachment();
-		System.out.println(user);
+		List cities=client.SendGetAllOffersRequest();
+
+		System.out.println("cities: "+ cities);
 		
 		}catch(Exception e) {
-			System.out.println("dasgebasz"+e.getMessage());
+			System.out.println(e.getMessage());
 			
 		}
 		System.out.println();

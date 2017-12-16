@@ -81,7 +81,13 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + id + ""
+				+ ", username=" + username 
+				+ ", password=" + password 
+				+ ", first_name=" + FirstName 
+				+ ", last_name=" + LastName 
+				+ ", bank_card= " + BankCard 
+				+ ", E-mail=" + email + "]";
 	}
 
 	public String getFirstName() {

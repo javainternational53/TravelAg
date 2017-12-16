@@ -6,11 +6,13 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.List;
 
 import javax.net.SocketFactory;
 
 
 import travelling.model.AttachmentType;
+import travelling.model.BookedTravel;
 import travelling.model.NetworkMessage;
 import travelling.model.User;
 
@@ -27,7 +29,6 @@ public class Client {
 		
 		try {
 			socket=factory.createSocket();
-			
 			socket.connect(new InetSocketAddress("localhost", port));
 			
 			input=new ObjectInputStream(socket.getInputStream());
@@ -39,21 +40,60 @@ public class Client {
 		System.out.println("Client done");
 	}
 	
-	public NetworkMessage SendLoginRequest(String user,String password) {
-		System.out.println("Sending request");
+	public User SendLoginRequest(String user,String password) {
+		User userToReturn=null;
 		NetworkMessage request,response;
 		User userToAttach=new User();
-		System.out.println("Sending Request 2");
-		userToAttach.setUsername(user);
-		System.out.println("Sending Request 3");
-		userToAttach.setPassword(password);
 		
+		userToAttach.setUsername(user);
+		userToAttach.setPassword(password);
 		request=new NetworkMessage();
 		request.setAttachment(userToAttach);
 		request.setAttachmentType(AttachmentType.USER);
 		request.setRequest("Login");
-		System.out.println("Sending Request 4");
+		response=sendRequest(request);
+		if(!response.getRequest().equals("Failure"))
+		{
+			userToReturn=(User)response.getAttachment();
+		}
+		return userToReturn;
+		
+	}
+	
+	public NetworkMessage SendSignupRequest(User user) {
+		NetworkMessage request,response;
+		
+		request=new NetworkMessage();
+		request.setAttachment(user);
+		request.setAttachmentType(AttachmentType.USER);
+		request.setRequest("Signup");
+		
 		return sendRequest(request);
+		
+	}
+	
+	public NetworkMessage sendSaveBookingRequest(BookedTravel travel) {
+		NetworkMessage request,response=null;
+		request=new NetworkMessage();
+		
+		request.setRequest("Save booking");
+		request.setAttachment(travel);
+		response =sendRequest(request);
+		
+		return response;
+	}
+	
+	public List SendGetAllOffersRequest() {
+		NetworkMessage request,response;
+		
+		request=new NetworkMessage();
+		
+		
+		request.setRequest("GetAllOffers");
+		
+		List offers = (List) sendRequest(request).getAttachment();
+		
+		return offers;
 		
 	}
 	
@@ -76,7 +116,7 @@ public class Client {
 		return response;
 	}
 	
-	
+
 	
 	
 }

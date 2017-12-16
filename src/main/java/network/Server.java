@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import javax.net.ServerSocketFactory;
 import javax.net.ssl.SSLServerSocketFactory;
 
+import persistence.PersistenceManager;
+import travelling.model.User;
+
 
 public class Server implements Runnable {
 
@@ -16,7 +19,20 @@ public class Server implements Runnable {
 	private int port;
 	private boolean running;
 	
-	
+	void createTestUser(){
+		User user = PersistenceManager.getUserByName("testuser99");
+		System.out.println(user);
+		if(user == null) {
+			user=new User();
+			user.setUsername("testuser99");
+			user.setPassword("testPass");
+			user.setFirstName("Johnny");
+			user.setLastName("Test");
+			user.setEmail("jtest@testmail.com");
+			user.setBankCard("1234-5678-9101-1121");
+			PersistenceManager.createUser(user);
+		}
+	}
 	
 	public boolean isRunning() {
 		return running;
@@ -52,6 +68,7 @@ public class Server implements Runnable {
 	
 	public Server() {
 		this.port = 8080;
+		createTestUser();
 		try {
 			
 			ServerSocketFactory factory=ServerSocketFactory.getDefault();
@@ -69,7 +86,7 @@ public class Server implements Runnable {
 		System.out.println("Server started");
 		while(running) {
 			try {
-				
+				System.out.println("Ready for connection");
 				Socket socket=serverSocket.accept();
 				System.out.println("new Socket is applying");
 				ClientServingThread newServer=new ClientServingThread(socket);

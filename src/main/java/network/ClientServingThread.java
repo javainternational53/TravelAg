@@ -9,6 +9,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import persistence.PersistenceManager;
 import travelling.model.AttachmentType;
+import travelling.model.BookedTravel;
 import travelling.model.NetworkMessage;
 import travelling.model.User;
 
@@ -20,14 +21,12 @@ public class ClientServingThread implements Runnable {
 	User associatedUser;
 	private boolean running;
 	
-	void createTestUser(){
-		User user=new User();
-		user.setUsername("testuser99");
-	}
+	
 	
 	public ClientServingThread(Socket socket) {
 		super();
 		this.socket = socket;
+		
 		System.out.println("Clientservingthread...");
 		try {
 			socketOutput=new ObjectOutputStream(socket.getOutputStream());
@@ -48,6 +47,7 @@ public class ClientServingThread implements Runnable {
 				NetworkMessage message = (NetworkMessage) socketInput.readObject();
 				System.out.println("Thread is still running");
 				socketOutput.writeObject(processMessage(message));
+				
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				
@@ -59,9 +59,7 @@ public class ClientServingThread implements Runnable {
 			}catch(Exception e) {
 				running=false;
 				e.printStackTrace();
-			}finally {
 				running=false;
-				
 			}
 		}
 
@@ -71,7 +69,8 @@ public class ClientServingThread implements Runnable {
 		//System.out.println(message);
 		NetworkMessage messageToReturn=new NetworkMessage();
 		messageToReturn.setRequest("failure");
-		if(message.getRequest().equals("Login"));{
+		String request=message.getRequest();
+		if(request.equals("Login")){
 			User userToLogin=(User)message.getAttachment();
 			User foundUser=PersistenceManager.getUserByName(userToLogin.getUsername());
 			System.out.println(foundUser);
@@ -83,9 +82,29 @@ public class ClientServingThread implements Runnable {
 				messageToReturn.setAttachmentType(AttachmentType.USER);
 			}
 				
+		}else if(request.equals("Signup")) {
+			User userToSignup=(User)message.getAttachment();
+			System.out.println(userToSignup);
+			if(PersistenceManager.getUserByName(userToSignup.getUsername()) != null)
+				messageToReturn.setRequest("Signup Failure: username in use.");
+			else if(PersistenceManager.getUserByEmail(userToSignup.getEmail())!=null)
+				messageToReturn.setRequest("Signup Failure: email in use.");
+			else {
+				PersistenceManager.createUser(userToSignup);
+				messageToReturn.setRequest("Signup succes");
+			}				
+			
+		}else if(request.equals("GetAllOffers")) {
+			messageToReturn.setRequest("GetAllOffers response");
+			messageToReturn.setAttachment(PersistenceManager.getAllTravels()); 
+		}else if(request.equals("Save booking")){
+			PersistenceManager.createBooking((BookedTravel)message.getAttachment());
+			messageToReturn.setRequest("Bookings response");
 		}
-		
+		System.out.println("cucc: "+messageToReturn.getRequest());
 		return messageToReturn;
 	}
+	
+	
 
 }

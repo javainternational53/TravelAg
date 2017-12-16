@@ -1,5 +1,7 @@
 package travelling.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +17,7 @@ import javafx.beans.property.StringProperty;
 
 @Entity
 @Table(name = "Travel")
-public class Travel {
+public class Travel implements Serializable{
 	
 	
 	@Id
@@ -62,9 +64,11 @@ public class Travel {
 	public Double getMAxPrice() {
 		return maxPrice;
 	}
+	
 	public void setMaxPrice(Double maxPrice) {
 		this.maxPrice=maxPrice;
 	}
+	
 	public DoubleProperty maxPriceProperty() {
 		return new SimpleDoubleProperty(maxPrice);
 	}
@@ -72,9 +76,11 @@ public class Travel {
 	public String getPackageOffer() {
 		return packageOffer;
 	}
+	
 	public void setPackageOffer(String packageOffer) {
 		this.packageOffer=packageOffer;
 	}
+	
 	public StringProperty packageOfferProperty() {
 		return new SimpleStringProperty(packageOffer);
 	}
@@ -82,10 +88,20 @@ public class Travel {
 	public int getNumberOfPersons() {
 		return numberOfPersons;
 	}
+	
 	public void setNumberOfPersons(int numberOfPersons) {
 		this.numberOfPersons=numberOfPersons;
 	}
+	
 	public IntegerProperty numberOfPersonsProperty() {
 		return new SimpleIntegerProperty(numberOfPersons);
 	}
+
+	@Override
+	public String toString() {
+		return "Travel [Id=" + Id + ", city=" + city + ", minPrice=" + minPrice + ", maxPrice=" + maxPrice
+				+ ", packageOffer=" + packageOffer + ", numberOfPersons=" + numberOfPersons + "]";
+	}
+	
+	
 }
