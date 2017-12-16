@@ -5,29 +5,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="367.0" prefWidth="450.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.FoglalasController">
+<AnchorPane prefHeight="215.0" prefWidth="500.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.FoglalasController">
    <children>
-      <Label layoutX="22.0" layoutY="14.0" text="Thank you for your order!">
+      <Label layoutX="47.0" layoutY="14.0" text="Thank you for your order!">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="129.0" layoutY="90.0" text="Travel destination:">
+      <Label layoutX="47.0" layoutY="87.0" text="Travel destination:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="197.0" layoutY="200.0" text="Price:">
+      <Label layoutX="183.0" layoutY="151.0" text="Price:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="359.0" layoutY="303.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
-      <Label fx:id="cityName" layoutX="183.0" layoutY="137.0" text="Label">
+      <Button layoutX="424.0" layoutY="151.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
+      <Label fx:id="cityName" layoutX="259.0" layoutY="78.0" text="Label">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label fx:id="totalPriceLabel" layoutX="183.0" layoutY="250.0" text="Label">
+      <Label fx:id="totalPriceLabel" layoutX="259.0" layoutY="142.0" text="Label">
          <font>
             <Font size="36.0" />
          </font></Label>
