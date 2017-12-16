@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="367.0" prefWidth="450.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.FoglalasController">
+   <children>
+      <Label layoutX="22.0" layoutY="14.0" text="Thank you for your order!">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="90.0" text="Travel destination:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="197.0" layoutY="200.0" text="Price:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="359.0" layoutY="303.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
+      <Label fx:id="cityName" layoutX="183.0" layoutY="137.0" text="Label">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Label fx:id="totalPriceLabel" layoutX="183.0" layoutY="250.0" text="Label">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
