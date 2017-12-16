@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -66,6 +68,7 @@ public class CityController {
 		this.cityName = cityName;
 	}
 	public static double price;
+	private TravelController log;
 	@FXML
 	private void initialize() {
 		price  = Double.parseDouble(startingPrice.getText());
@@ -188,13 +191,23 @@ public class CityController {
     }
 	@FXML
     void accept(ActionEvent event) throws IOException {
-		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/foglalas.fxml"));
-		Scene scene = new Scene(root, 500, 215);
-		primaryStage.setScene(scene);
-		primaryStage.setTitle("Accept");
-		primaryStage.show();
-		((Node)(event.getSource())).getScene().getWindow().hide();
-		System.out.println("ok");
+		if(log.loginout) {
+			Stage primaryStage = new Stage();
+			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/foglalas.fxml"));
+			Scene scene = new Scene(root, 500, 215);
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("Accept");
+			primaryStage.show();
+			((Node)(event.getSource())).getScene().getWindow().hide();
+			System.out.println("ok");
+		}
+		else {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Information Dialog");
+			alert.setHeaderText("You can't take the trip");
+			alert.setContentText("Please, Login!");
+
+			alert.showAndWait();
+		}
 	}
 }

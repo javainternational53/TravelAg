@@ -87,6 +87,7 @@ public class TravelController {
 
     private LoginController login;
     public static String CityName;
+    public static boolean loginout;
 
 	private ObservableList<Travel> travelSearchData = FXCollections.observableArrayList();
 
@@ -180,6 +181,7 @@ public class TravelController {
 				// System.out.println(user.getPass());
 				if (loginButton.getText().equals("Login") && userName.getText().equals(user.getUsername())
 						&& password.getText().equals(user.getPassword())) {
+					loginout = true;
 					userName.setVisible(false);
 					password.setVisible(false);
 					bejelentkezve.setVisible(true);
@@ -199,6 +201,7 @@ public class TravelController {
 					break;
 				}
 				if (loginButton.getText().equals("Logout")) {
+					loginout = false;
 					userName.setVisible(true);
 					userName.setText("");
 					password.setVisible(true);
