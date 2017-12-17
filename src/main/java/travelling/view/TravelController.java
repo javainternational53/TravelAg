@@ -329,6 +329,7 @@ public class TravelController {
 							 * controller.setTravelController(this);
 							 */
 							dialogStage.show();
+							
 
 						} catch (IOException e) {
 							e.printStackTrace();
