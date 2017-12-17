@@ -122,12 +122,16 @@ public class TravelController {
 	}
 
 	public void SignUp(ActionEvent event) throws IOException {
+		
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/register.fxml"));
+		
+		
 		Scene scene = new Scene(root, 400, 500);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Register");
 		primaryStage.show();
+		
 	}
 
 	/*
@@ -146,13 +150,6 @@ public class TravelController {
 
 	public void setUserAll(List<User> userAll) {
 		this.userAll = userAll;
-	}
-
-	public void add() {
-		userAll.add(new User(001, "user", "pass"));
-		userAll.add(new User(002, "user1", "pass1"));
-		userAll.add(new User(003, "user2", "pass2"));
-		userAll.add(new User(004, "user3", "pass3"));
 	}
 
 	private static boolean flag = true;
@@ -185,15 +182,10 @@ public class TravelController {
 		 */
 
 		this.loginButton.setOnAction((event) -> {
-			add();
+			User user=client.SendLoginRequest(userName.getText(), password.getText());
 			// System.out.println(userAll.size());
 			int count = 0;
-			for (User user : userAll) {
-				++count;
-				// System.out.println(user.getUser());
-				// System.out.println(user.getPass());
-				if (loginButton.getText().equals("Login") && userName.getText().equals(user.getUsername())
-						&& password.getText().equals(user.getPassword())) {
+				if (loginButton.getText().equals("Login") && user!=null) {
 					loginout = true;
 					userName.setVisible(false);
 					password.setVisible(false);
@@ -204,16 +196,9 @@ public class TravelController {
 					usernameLabel.setVisible(false);
 					passwordLabel.setVisible(false);
 					loginButton.setText("Logout");
-					break;
-				} else if (userAll.size() == count) {
-					Alert alert = new Alert(AlertType.ERROR);
-					alert.setTitle("Error");
-					alert.setHeaderText("Wrong password or username");
-					alert.setContentText("Try it again.");
-					alert.showAndWait();
-					break;
-				}
-				if (loginButton.getText().equals("Logout")) {
+					
+				}else if (loginButton.getText().equals("Logout") &&
+					client.sendLogoutRequest().getRequest().equals("Logout success")) {
 					loginout = false;
 					userName.setVisible(true);
 					userName.setText("");
@@ -226,12 +211,10 @@ public class TravelController {
 					usernameLabel.setVisible(true);
 					passwordLabel.setVisible(true);
 					loginButton.setText("Login");
-					break;
+					
 				}
-			}
-			userAll.clear();
-
-		});
+		}
+		);
 		this.searchButton.setOnAction((event) -> {
 			double minPrice = 1;
 			double maxPrice = 10000000;

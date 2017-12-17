@@ -100,6 +100,9 @@ public class ClientServingThread implements Runnable {
 		}else if(request.equals("Save booking")){
 			PersistenceManager.createBooking((BookedTravel)message.getAttachment());
 			messageToReturn.setRequest("Bookings response");
+		}else if(request.equals("Logout")) {
+			associatedUser=null;
+			messageToReturn.setRequest("Logout success");
 		}
 		System.out.println("cucc: "+messageToReturn.getRequest());
 		return messageToReturn;

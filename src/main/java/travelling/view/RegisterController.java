@@ -7,6 +7,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import travelling.MainApp;
+import javafx.scene.*;
+
 
 public class RegisterController {
 	@FXML
@@ -161,12 +163,20 @@ public class RegisterController {
 		setEmail(fxEmail.getText());
 		setBankCardNumber(fxBankCardNumber.getText());
 		
+		
 		System.out.println(firstName);
 		System.out.println(lastName);
 		System.out.println(userName);
 		System.out.println(password);
 		System.out.println(email);
 		System.out.println(bankCardNumber);
+		
+
+		 Node  source = (Node)  event.getSource(); 
+		 Stage stage  = (Stage) source.getScene().getWindow();
+		 stage.getOnCloseRequest().handle(null);
+		 stage.close();
+		
 	}
 	
 }
