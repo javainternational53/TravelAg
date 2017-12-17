@@ -85,25 +85,24 @@ public class TravelController {
 	private BorderPane rootLayout;
 
 	@FXML
-	 private TextField registerFirstName = new TextField();
-	 @FXML
-	 private TextField registerLastName = new TextField();
-	 @FXML
-	 private TextField registerUsername = new TextField();
-	 @FXML
-	 private TextField registerpPassword = new TextField();
-	 @FXML
-	 private TextField registerEmail = new TextField();
-	 @FXML
-	 private TextField registerBankCardNumber = new TextField();
-	
-    private Client client;
-    ObservableList<Travel> travlist;
-    
-    
-    private LoginController login;
-    public static String CityName;
-    public static boolean loginout;
+	private TextField registerFirstName = new TextField();
+	@FXML
+	private TextField registerLastName = new TextField();
+	@FXML
+	private TextField registerUsername = new TextField();
+	@FXML
+	private TextField registerpPassword = new TextField();
+	@FXML
+	private TextField registerEmail = new TextField();
+	@FXML
+	private TextField registerBankCardNumber = new TextField();
+
+	private Client client;
+	ObservableList<Travel> travlist;
+
+	private LoginController login;
+	public static String CityName;
+	public static boolean loginout;
 
 	private ObservableList<Travel> travelSearchData = FXCollections.observableArrayList();
 
@@ -116,35 +115,32 @@ public class TravelController {
 	}
 
 	void sqlTest() {
-		User user=new User();
+		User user = new User();
 		user.setUsername("tesztel");
 		user.setPassword("tesztpass");
 		user.setFirstName("firstName");
 		user.setLastName("lastName");
 		user.setEmail("email@emailcim.com");
 		user.setBankCard("1234-5678-9101-1121");
-		NetworkMessage message=client.SendSignupRequest(user);
+		NetworkMessage message = client.SendSignupRequest(user);
 		System.out.println(message.getRequest());
-		
-		
-		
+
 	}
-	
+
 	public TravelController() {
-		
+
 	}
 
 	public void SignUp(ActionEvent event) throws IOException {
-		
+
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/register.fxml"));
-		
-		
+
 		Scene scene = new Scene(root, 400, 500);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Register");
 		primaryStage.show();
-		
+
 	}
 
 	/*
@@ -169,15 +165,14 @@ public class TravelController {
 
 	@FXML
 	public void initialize() {
-	
+
 		client = new Client();
 		System.out.println("making travel");
-		//sqlTest();
-		travlist=FXCollections.observableArrayList();
-		
+		// sqlTest();
+		travlist = FXCollections.observableArrayList();
+
 		// Initialize the person table with the two columns.
-		
-		
+
 		cityColumn.setCellValueFactory(cellData -> cellData.getValue().cityProperty());
 		minPriceColumn.setCellValueFactory(cellData -> cellData.getValue().minPriceProperty().asObject());
 		maxPriceColumn.setCellValueFactory(cellData -> cellData.getValue().maxPriceProperty().asObject());
@@ -185,56 +180,71 @@ public class TravelController {
 		numberOfPersonsColumn.setCellValueFactory(cellData -> cellData.getValue().numberOfPersonsProperty().asObject());
 		bejelentkezve.setVisible(false);
 		usernameText.setVisible(false);
-		
-		travlist.addAll((ArrayList<Travel>)client.SendGetAllOffersRequest());
-		
+
+		travlist.addAll((ArrayList<Travel>) client.SendGetAllOffersRequest());
+
 		travelTable.setItems(travlist);
 		/*
 		 * if(LoginController.loginout == false) System.out.println("asd"); else
 		 * System.out.println("uio");
 		 */
 
-		
-		
 		this.signUpButton.setOnAction((event) -> {
-			   client.SendSignupRequest(new User(registerFirstName.getText(), registerLastName.getText(),
-			     registerUsername.getText(),registerpPassword.getText(),
-			     registerEmail.getText(), registerBankCardNumber.getText()));
-			  });
+			if (registerFirstName.getText().length() > 0 && registerLastName.getText().length() > 0
+					&& registerUsername.getText().length() > 0 && registerpPassword.getText().length() > 0
+					&& registerEmail.getText().length() > 0 && registerBankCardNumber.getText().length() > 0) {
+				
+				client.SendSignupRequest(new User(registerFirstName.getText(), registerLastName.getText(),
+						registerUsername.getText(), registerpPassword.getText(), registerEmail.getText(),
+						registerBankCardNumber.getText()));
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Information Dialog");
+				alert.setHeaderText("Thank you!");
+				alert.setContentText("Please Login");
+				alert.showAndWait();
+			}
+			else {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error Dialog");
+				alert.setHeaderText("Wrong data!");
+				alert.setContentText("Try it again");
+				alert.showAndWait();
+			}
+				
+		});
 		this.loginButton.setOnAction((event) -> {
-			User user=client.SendLoginRequest(userName.getText(), password.getText());
+			User user = client.SendLoginRequest(userName.getText(), password.getText());
 			// System.out.println(userAll.size());
 			int count = 0;
-				if (loginButton.getText().equals("Login") && user!=null) {
-					loginout = true;
-					userName.setVisible(false);
-					password.setVisible(false);
-					bejelentkezve.setVisible(true);
-					usernameText.setText(userName.getText());
-					usernameText.setVisible(true);
-					signUpButton.setVisible(false);
-					usernameLabel.setVisible(false);
-					passwordLabel.setVisible(false);
-					loginButton.setText("Logout");
-					
-				}else if (loginButton.getText().equals("Logout") &&
-					client.sendLogoutRequest().getRequest().equals("Logout success")) {
-					loginout = false;
-					userName.setVisible(true);
-					userName.setText("");
-					password.setVisible(true);
-					password.setText("");
-					bejelentkezve.setVisible(false);
-					usernameText.setText("");
-					usernameText.setVisible(false);
-					signUpButton.setVisible(true);
-					usernameLabel.setVisible(true);
-					passwordLabel.setVisible(true);
-					loginButton.setText("Login");
-					
-				}
-		}
-		);
+			if (loginButton.getText().equals("Login") && user != null) {
+				loginout = true;
+				userName.setVisible(false);
+				password.setVisible(false);
+				bejelentkezve.setVisible(true);
+				usernameText.setText(userName.getText());
+				usernameText.setVisible(true);
+				signUpButton.setVisible(false);
+				usernameLabel.setVisible(false);
+				passwordLabel.setVisible(false);
+				loginButton.setText("Logout");
+
+			} else if (loginButton.getText().equals("Logout")
+					&& client.sendLogoutRequest().getRequest().equals("Logout success")) {
+				loginout = false;
+				userName.setVisible(true);
+				userName.setText("");
+				password.setVisible(true);
+				password.setText("");
+				bejelentkezve.setVisible(false);
+				usernameText.setText("");
+				usernameText.setVisible(false);
+				signUpButton.setVisible(true);
+				usernameLabel.setVisible(true);
+				passwordLabel.setVisible(true);
+				loginButton.setText("Login");
+
+			}
+		});
 		this.searchButton.setOnAction((event) -> {
 			double minPrice = 1;
 			double maxPrice = 10000000;
@@ -329,14 +339,12 @@ public class TravelController {
 							 * controller.setTravelController(this);
 							 */
 							dialogStage.show();
-							
 
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
 					}
 
-					
 				}
 
 				//
@@ -369,7 +377,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -402,7 +409,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -433,7 +439,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -466,7 +471,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -499,7 +503,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -532,7 +535,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -565,7 +567,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -598,7 +599,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -631,7 +631,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -664,7 +663,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				// ***
@@ -697,7 +695,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -728,7 +725,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
 					Travel selectedTravelItem = travelTable.getSelectionModel().getSelectedItem();
@@ -758,7 +754,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -789,7 +784,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -820,7 +814,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -851,7 +844,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -882,7 +874,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 				if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
@@ -913,7 +904,6 @@ public class TravelController {
 						}
 					}
 
-					
 				}
 
 			}
