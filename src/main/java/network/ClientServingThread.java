@@ -68,7 +68,7 @@ public class ClientServingThread implements Runnable {
 	private NetworkMessage processMessage(NetworkMessage message){
 		//System.out.println(message);
 		NetworkMessage messageToReturn=new NetworkMessage();
-		messageToReturn.setRequest("failure");
+		messageToReturn.setRequest("Login failure");
 		String request=message.getRequest();
 		if(request.equals("Login")){
 			User userToLogin=(User)message.getAttachment();

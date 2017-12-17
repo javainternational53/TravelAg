@@ -108,10 +108,7 @@ public class TravelController {
 		System.out.println("making travel");
 		*/
 		try {
-		List cities=client.SendGetAllOffersRequest();
 
-		System.out.println("cities: "+ cities);
-		
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 			
