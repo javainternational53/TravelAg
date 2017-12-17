@@ -2,29 +2,13 @@
 
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelling.view.MenuController">
    <top>
       <MenuBar prefWidth="1200.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="AdminInterface">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Travel add" />
-                  <MenuItem mnemonicParsing="false" onAction="#UserList" text="User list" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="UserInterface">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Valami" />
-            </items>
-          </Menu>
+          <Menu mnemonicParsing="false" text="Exit" />
         </menus>
       </MenuBar>
    </top>
