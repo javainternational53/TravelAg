@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -84,7 +85,9 @@ public class TravelController {
 	private BorderPane rootLayout;
 
     private Client client;
-
+    ObservableList<Travel> travlist;
+    
+    
     private LoginController login;
     public static String CityName;
     public static boolean loginout;
@@ -99,22 +102,23 @@ public class TravelController {
 		this.travelSearchData = travelSearchData;
 	}
 
-	public TravelController() {
-		client = new Client();
-		System.out.println("making travel");
+	void sqlTest() {
+		User user=new User();
+		user.setUsername("tesztel");
+		user.setPassword("tesztpass");
+		user.setFirstName("firstName");
+		user.setLastName("lastName");
+		user.setEmail("email@emailcim.com");
+		user.setBankCard("1234-5678-9101-1121");
+		NetworkMessage message=client.SendSignupRequest(user);
+		System.out.println(message.getRequest());
 		
-		/*
-		client.SendLoginRequest("tetuser99", "testPass");
-		System.out.println("making travel");
-		*/
-		try {
-
-		}catch(Exception e) {
-			System.out.println(e.getMessage());
-			
-		}
-		System.out.println();
-		//System.out.println(client.SendLoginRequest("Test", "Test"));
+		
+		
+	}
+	
+	public TravelController() {
+		
 	}
 
 	public void SignUp(ActionEvent event) throws IOException {
@@ -155,7 +159,15 @@ public class TravelController {
 
 	@FXML
 	public void initialize() {
+	
+		client = new Client();
+		System.out.println("making travel");
+		//sqlTest();
+		travlist=FXCollections.observableArrayList();
+		
 		// Initialize the person table with the two columns.
+		
+		
 		cityColumn.setCellValueFactory(cellData -> cellData.getValue().cityProperty());
 		minPriceColumn.setCellValueFactory(cellData -> cellData.getValue().minPriceProperty().asObject());
 		maxPriceColumn.setCellValueFactory(cellData -> cellData.getValue().maxPriceProperty().asObject());
@@ -163,6 +175,10 @@ public class TravelController {
 		numberOfPersonsColumn.setCellValueFactory(cellData -> cellData.getValue().numberOfPersonsProperty().asObject());
 		bejelentkezve.setVisible(false);
 		usernameText.setVisible(false);
+		
+		travlist.addAll((ArrayList<Travel>)client.SendGetAllOffersRequest());
+		
+		travelTable.setItems(travlist);
 		/*
 		 * if(LoginController.loginout == false) System.out.println("asd"); else
 		 * System.out.println("uio");
@@ -239,7 +255,7 @@ public class TravelController {
 				} catch (Exception e) {
 					city = "";
 				}
-			for (Travel travel : mainApp.getTravelData()) {
+			for (Travel travel : travlist) {
 				if (minPrice <= travel.getMinPrice() && maxPrice >= travel.getMAxPrice()
 						&& (city.equals(travel.getCity()) || city.length() == 0)) {
 					travelSearchData.add(travel);
@@ -901,9 +917,4 @@ public class TravelController {
 		});
 	}
 
-	public void setMainApp(MainApp mainApp) {
-		this.mainApp = mainApp;
-		// Add observable list data to the table
-		travelTable.setItems(mainApp.getTravelData());
-	}
 }

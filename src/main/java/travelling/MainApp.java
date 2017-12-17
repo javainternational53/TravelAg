@@ -26,7 +26,7 @@ public class MainApp extends Application {
 	private ObservableList<Travel> travelData = FXCollections.observableArrayList();
 	//test
 	public MainApp() {
-		travelData.add(new Travel("Budapest", 100.0, 50000.0, "yes",2));
+		/*travelData.add(new Travel("Budapest", 100.0, 50000.0, "yes",2));
 		travelData.add(new Travel("Debrecen", 100.0, 30000.0, "yes",2));
 		travelData.add(new Travel("Miskolc", 2000.0, 25000.0, "yes",2));
 		travelData.add(new Travel("Szeged", 3000.0, 20000.0, "yes",2));
@@ -45,6 +45,10 @@ public class MainApp extends Application {
 		travelData.add(new Travel("Veszprem", 2500.0, 25000.0, "yes",2));
 		travelData.add(new Travel("Zalaegerszeg", 2500.0, 25000.0, "yes",2));
 		travelData.add(new Travel("Szombathely", 2500.0, 25000.0, "yes",2));
+		*/
+		
+		
+		
 	}	
 
 	public ObservableList<Travel> getTravelData() {
@@ -89,7 +93,6 @@ public class MainApp extends Application {
 	            rootLayout.setCenter(personOverview);
 	         // Give the controller access to the main app.
 	            TravelController controller = loader.getController();
-	            controller.setMainApp(this);
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
