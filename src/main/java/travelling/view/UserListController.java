@@ -32,9 +32,4 @@ public class UserListController {
 		userNameColumn.setCellValueFactory(cellData -> cellData.getValue().userNameProperty());
 		passwordColumn.setCellValueFactory(cellData -> cellData.getValue().passwordProperty());
 	}
-	public void setMenuController(MenuController menuController)
-	{
-		this.menuController = menuController;
-		userTable.setItems(menuController.getUserListData());
-	}
 }
