@@ -15,6 +15,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import network.Client;
+import travelling.model.BookedTravel;
 
 public class CityController {
 	@FXML
@@ -60,6 +62,10 @@ public class CityController {
 	
 	@FXML
 	public Label cityName;
+	
+	public Client client;
+	public long userId;
+	public long travelId;
 	
 	public Label getCityName() {
 		return cityName;
@@ -192,12 +198,17 @@ public class CityController {
 	@FXML
     void accept(ActionEvent event) throws IOException {
 		if(log.loginout) {
+			BookedTravel bTravel=new BookedTravel();
+			bTravel.setSum(price);
+			bTravel.setTravelId(travelId);
+			bTravel.setUserId(userId);
 			Stage primaryStage = new Stage();
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("travelling/view/foglalas.fxml"));
 			Scene scene = new Scene(root, 500, 215);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Accept");
 			primaryStage.show();
+			client.sendSaveBookingRequest(bTravel);
 			((Node)(event.getSource())).getScene().getWindow().hide();
 			System.out.println("ok");
 		}

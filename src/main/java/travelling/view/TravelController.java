@@ -100,6 +100,7 @@ public class TravelController {
     private Client client;
     ObservableList<Travel> travlist;
     
+    private User loggedInUser;
     
     private LoginController login;
     public static String CityName;
@@ -206,6 +207,7 @@ public class TravelController {
 			// System.out.println(userAll.size());
 			int count = 0;
 				if (loginButton.getText().equals("Login") && user!=null) {
+					loggedInUser=user;
 					loginout = true;
 					userName.setVisible(false);
 					password.setVisible(false);
@@ -219,6 +221,7 @@ public class TravelController {
 					
 				}else if (loginButton.getText().equals("Logout") &&
 					client.sendLogoutRequest().getRequest().equals("Logout success")) {
+					loggedInUser=null;
 					loginout = false;
 					userName.setVisible(true);
 					userName.setText("");
@@ -314,6 +317,7 @@ public class TravelController {
 
 							FXMLLoader loader = new FXMLLoader();
 							loader.setLocation(MainApp.class.getResource("view/budapest.fxml"));
+							
 							AnchorPane page = (AnchorPane) loader.load();
 							Stage dialogStage = new Stage();
 							dialogStage.setTitle("City");
@@ -321,6 +325,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)1;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -328,9 +336,10 @@ public class TravelController {
 							 * TravelSearchController controller = loader.getController();
 							 * controller.setTravelController(this);
 							 */
+							
 							dialogStage.show();
 							
-
+							
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
@@ -355,6 +364,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)2;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -388,6 +401,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)3;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -419,6 +436,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)4;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -452,6 +473,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)5;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -485,6 +510,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)6;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -518,6 +547,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)7;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -551,6 +584,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)8;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -584,6 +621,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)9;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -617,6 +658,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)10;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -650,6 +695,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)11;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -683,6 +732,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)12;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -714,6 +767,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)13;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -744,6 +801,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)14;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -775,6 +836,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)15;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -806,6 +871,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)16;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -837,6 +906,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)17;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -868,6 +941,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)18;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);
@@ -899,6 +976,10 @@ public class TravelController {
 							dialogStage.initOwner(primaryStage);
 							Scene scene = new Scene(page);
 							dialogStage.setScene(scene);
+							CityController controller=loader.getController();
+							controller.userId=loggedInUser.getId();
+							controller.travelId=(long)19;
+							controller.client=client;
 							CityName = selectedTravelItem.getCity();
 							// Set the persons into the controller.
 							// controller.setTravelController(travelSearchData);

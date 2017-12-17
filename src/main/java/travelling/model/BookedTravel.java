@@ -1,5 +1,7 @@
 package travelling.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +10,7 @@ import javax.persistence.Id;
 
 @Entity
 @Table(name="BookedTravel")
-public class BookedTravel {
+public class BookedTravel implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
