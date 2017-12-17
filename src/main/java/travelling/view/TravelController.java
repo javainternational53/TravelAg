@@ -84,6 +84,19 @@ public class TravelController {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 
+	@FXML
+	 private TextField registerFirstName = new TextField();
+	 @FXML
+	 private TextField registerLastName = new TextField();
+	 @FXML
+	 private TextField registerUsername = new TextField();
+	 @FXML
+	 private TextField registerpPassword = new TextField();
+	 @FXML
+	 private TextField registerEmail = new TextField();
+	 @FXML
+	 private TextField registerBankCardNumber = new TextField();
+	
     private Client client;
     ObservableList<Travel> travlist;
     
@@ -181,6 +194,13 @@ public class TravelController {
 		 * System.out.println("uio");
 		 */
 
+		
+		
+		this.signUpButton.setOnAction((event) -> {
+			   client.SendSignupRequest(new User(registerFirstName.getText(), registerLastName.getText(),
+			     registerUsername.getText(),registerpPassword.getText(),
+			     registerEmail.getText(), registerBankCardNumber.getText()));
+			  });
 		this.loginButton.setOnAction((event) -> {
 			User user=client.SendLoginRequest(userName.getText(), password.getText());
 			// System.out.println(userAll.size());
