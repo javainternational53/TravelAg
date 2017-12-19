@@ -200,6 +200,12 @@ public class TravelController {
 				client.SendSignupRequest(new User(registerFirstName.getText(), registerLastName.getText(),
 						registerUsername.getText(), registerpPassword.getText(), registerEmail.getText(),
 						registerBankCardNumber.getText()));
+				registerFirstName.setText("");
+				registerLastName.setText("");
+				registerUsername.setText("");
+				registerpPassword.setText("");
+				registerEmail.setText("");
+				registerBankCardNumber.setText("");
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Information Dialog");
 				alert.setHeaderText("Thank you!");
